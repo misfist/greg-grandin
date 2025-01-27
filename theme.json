@@ -26,22 +26,22 @@
 					"slug": "contrast"
 				},
 				{
-					"color": "#FFEE58",
+					"color": "#ba181b",
 					"name": "Accent 1",
 					"slug": "accent-1"
 				},
 				{
-					"color": "#F6CFF4",
+					"color": "#660708",
 					"name": "Accent 2",
 					"slug": "accent-2"
 				},
 				{
-					"color": "#503AA8",
+					"color": "#a4161a",
 					"name": "Accent 3",
 					"slug": "accent-3"
 				},
 				{
-					"color": "#686868",
+					"color": "#b1a7a6",
 					"name": "Accent 4",
 					"slug": "accent-4"
 				},
@@ -58,8 +58,8 @@
 			]
 		},
 		"layout": {
-			"contentSize": "645px",
-			"wideSize": "1340px"
+			"contentSize": "980px",
+			"wideSize": "1240px"
 		},
 		"spacing": {
 			"defaultSpacingSizes": false,
@@ -116,35 +116,89 @@
 				{
 					"fontFace": [
 						{
-							"fontFamily": "Manrope",
+							"fontFamily": "\"DM Sans\"",
 							"fontStyle": "normal",
-							"fontWeight": "200 800",
+							"fontWeight": "400",
 							"src": [
-								"file:./assets/fonts/manrope/Manrope-VariableFont_wght.woff2"
+								"file:./assets/fonts/dm-sans/dm-sans-400-normal.woff2"
+							]
+						},
+						{
+							"fontFamily": "\"DM Sans\"",
+							"fontStyle": "italic",
+							"fontWeight": "400",
+							"src": [
+								"file:./assets/fonts/dm-sans/dm-sans-400-italic.woff2"
+							]
+						},
+						{
+							"fontFamily": "\"DM Sans\"",
+							"fontStyle": "normal",
+							"fontWeight": "700",
+							"src": [
+								"file:./assets/fonts/dm-sans/dm-sans-700-normal.woff2"
+							]
+						},
+						{
+							"fontFamily": "\"DM Sans\"",
+							"fontStyle": "italic",
+							"fontWeight": "800",
+							"src": [
+								"file:./assets/fonts/dm-sans/dm-sans-800-italic.woff2"
 							]
 						}
 					],
-					"fontFamily": "Manrope, sans-serif",
-					"name": "Manrope",
-					"slug": "manrope"
+					"fontFamily": "\"DM Sans\", sans-serif",
+					"name": "DM Sans",
+					"slug": "dm-sans"
 				},
 				{
 					"fontFace": [
 						{
-							"fontFamily": "\"Fira Code\"",
+							"fontFamily": "\"Libre Franklin\"",
 							"fontStyle": "normal",
-							"fontWeight": "300 700",
+							"fontWeight": "400",
 							"src": [
-								"file:./assets/fonts/fira-code/FiraCode-VariableFont_wght.woff2"
+								"file:./assets/fonts/libre-franklin/libre-franklin-400-normal.woff2"
+							]
+						},
+						{
+							"fontFamily": "\"Libre Franklin\"",
+							"fontStyle": "italic",
+							"fontWeight": "400",
+							"src": [
+								"file:./assets/fonts/libre-franklin/libre-franklin-400-italic.woff2"
+							]
+						},
+						{
+							"fontFamily": "\"Libre Franklin\"",
+							"fontStyle": "italic",
+							"fontWeight": "700",
+							"src": [
+								"file:./assets/fonts/libre-franklin/libre-franklin-700-italic.woff2"
+							]
+						},
+						{
+							"fontFamily": "\"Libre Franklin\"",
+							"fontStyle": "normal",
+							"fontWeight": "700",
+							"src": [
+								"file:./assets/fonts/libre-franklin/libre-franklin-700-normal.woff2"
 							]
 						}
 					],
-					"fontFamily": "\"Fira Code\", monospace",
-					"name": "Fira Code",
-					"slug": "fira-code"
+					"fontFamily": "\"Libre Franklin\", sans-serif",
+					"name": "Libre Franklin",
+					"slug": "libre-franklin"
 				}
 			],
 			"fontSizes": [
+				{
+					"fluid": false,
+					"name": "Extra Small",
+					"size": "0.75rem",
+					"slug": "x-small"
+				},
 				{
 					"fluid": false,
 					"name": "Small",
@@ -200,6 +254,9 @@
 				}
 			},
 			"core/button": {
+				"border": {
+					"radius": "0px"
+				},
 				"variations": {
 					"outline": {
 						"border": {
@@ -604,7 +661,7 @@
 					}
 				},
 				"color": {
-					"background": "var(--wp--preset--color--contrast)",
+					"background": "var(--wp--preset--color--accent-1)",
 					"text": "var(--wp--preset--color--base)"
 				},
 				"spacing": {
@@ -616,7 +673,8 @@
 					}
 				},
 				"typography": {
-					"fontSize": "var(--wp--preset--font-size--medium)"
+					"fontSize": "var(--wp--preset--font-size--medium)",
+					"textTransform": "uppercase"
 				}
 			},
 			"caption": {
@@ -654,6 +712,7 @@
 			"h6": {
 				"typography": {
 					"fontSize": "var(--wp--preset--font-size--small)",
+					"fontStyle": "normal",
 					"fontWeight": "700",
 					"letterSpacing": "1.4px",
 					"textTransform": "uppercase"
@@ -661,13 +720,19 @@
 			},
 			"heading": {
 				"typography": {
-					"fontWeight": "400",
+					"fontFamily": "var(--wp--preset--font-family--dm-sans)",
+					"fontStyle": "normal",
+					"fontWeight": "700",
 					"letterSpacing": "-0.1px",
-					"lineHeight": "1.125"
+					"lineHeight": "1.125",
+					"textTransform": "uppercase"
 				}
 			},
 			"link": {
 				":hover": {
+					"color": {
+						"text": "var(--wp--preset--color--accent-1)"
+					},
 					"typography": {
 						"textDecoration": "none"
 					}
@@ -685,10 +750,11 @@
 			}
 		},
 		"typography": {
-			"fontFamily": "var(--wp--preset--font-family--manrope)",
-			"fontSize": "var(--wp--preset--font-size--large)",
-			"fontWeight": "300",
-			"letterSpacing": "-0.1px",
+			"fontFamily": "var(--wp--preset--font-family--libre-franklin)",
+			"fontSize": "var(--wp--preset--font-size--medium)",
+			"fontStyle": "normal",
+			"fontWeight": "400",
+			"letterSpacing": "0px",
 			"lineHeight": "1.4"
 		}
 	},
