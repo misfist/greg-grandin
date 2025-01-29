@@ -71,26 +71,42 @@ add_action( 'init', __NAMESPACE__ . '\pattern_categories' );
  */
 function register_block_bindings() {
 	register_block_bindings_source(
-		'greg-grandin/format',
+		'greg-grandin/publication-date',
 		array(
-			'label'              => _x( 'Post format name', 'Label for the block binding placeholder in the editor', 'greg-grandin' ),
-			'get_value_callback' => 'format_binding',
+			'label'              => _x( 'Publication Date', 'Label for the block binding placeholder in the editor', 'greg-grandin' ),
+			'get_value_callback' => __NAMESPACE__ . '\publication_date_binding',
+		)
+	);
+
+	register_block_bindings_source(
+		'greg-grandin/copyright',
+		array(
+			'label'              => _x( 'Copyright', 'Label for the block binding placeholder in the editor', 'greg-grandin' ),
+			'get_value_callback' => __NAMESPACE__ . '\copyright_binding',
 		)
 	);
 }
 add_action( 'init', __NAMESPACE__ . '\register_block_bindings' );
 
 /**
- * Callback function for the post format name block binding source.
+ * Binding for publication_date.
  *
- * @since Greg Grandin 1.0
- *
- * @return string|void Post format name, or nothing if the format is 'standard'.
+ * @return string
  */
-function format_binding() {
-	$post_format_slug = get_post_format();
-
-	if ( $post_format_slug && 'standard' !== $post_format_slug ) {
-		return get_post_format_string( $post_format_slug );
+function publication_date_binding(): string {
+	$publication_date = get_post_meta( get_the_ID(), 'publication_date', true );
+	if ( $publication_date ) {
+		$format = get_option( 'date_format' );
+		return date( $format, strtotime( $publication_date ) );
 	}
+	return get_the_date();
+}
+
+/**
+ * Binding for copyright info.
+ *
+ * @return string
+ */
+function copyright_binding(): string {
+	return sprintf( '&copy; %s', date( 'Y' ) );
 }
