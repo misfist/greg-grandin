@@ -11,10 +11,9 @@
 
 namespace Greg_Grandin;
 
-
 /**
  * Get all the include files for the theme.
- * 
+ *
  * @since Greg Grandin 1.0
  *
  * @return void
