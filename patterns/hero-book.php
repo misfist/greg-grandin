@@ -1,10 +1,10 @@
 <?php
 /**
- * Title: Hero book
+ * Title: Hero, Book
  * Slug: greg-grandin/hero-book
  * Categories: banner
- * Keywords: podcast, hero, stories
- * Description: A hero section for the book with a description and pre-order link.
+ * Keywords: hero, book
+ * Description: A hero with an overlapped book cover and links.
  *
  * @package WordPress
  * @subpackage Greg_Grandin
