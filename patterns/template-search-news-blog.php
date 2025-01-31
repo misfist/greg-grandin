@@ -36,4 +36,4 @@
 </main>
 <!-- /wp:group -->
 
-<!-- wp:template-part {"slug":"footer-newsletter"} /-->
+<!-- wp:template-part {"slug":"footer"} /-->

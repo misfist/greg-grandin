@@ -19,6 +19,3 @@
 <!-- wp:pattern {"slug":"greg-grandin/hero-book"} /-->
 <!-- wp:pattern {"slug":"greg-grandin/cta-book-links"} /-->
 <!-- wp:pattern {"slug":"greg-grandin/banner-about-book"} /-->
-<!-- wp:pattern {"slug":"greg-grandin/cta-book-locations"} /-->
-<!-- wp:pattern {"slug":"greg-grandin/text-faqs"} /-->
-<!-- wp:pattern {"slug":"greg-grandin/cta-newsletter"} /-->

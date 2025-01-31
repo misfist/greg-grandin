@@ -3,7 +3,7 @@
 <!-- wp:group {"tagName":"main","style":{"spacing":{"margin":{"top":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
 <main class="wp-block-group" style="margin-top:var(--wp--preset--spacing--60)"><!-- wp:post-content {"align":"wide","fontSize":"medium","layout":{"type":"default"}} /-->
 
-<!-- wp:query {"queryId":0,"query":{"perPage":1,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"parents":[]},"metadata":{"name":"Latest Book"},"align":"full","layout":{"type":"default"}} -->
+<!-- wp:query {"queryId":0,"query":{"perPage":1,"pages":0,"offset":0,"postType":"book","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"parents":[],"format":[]},"metadata":{"name":"Latest Book"},"align":"full","layout":{"type":"default"}} -->
 <div class="wp-block-query alignfull"><!-- wp:post-template {"align":"full","layout":{"type":"default"}} -->
 <!-- wp:group {"metadata":{"categories":["banner"],"patternName":"greg-grandin/hero-overlapped-book-cover-with-links","name":"Hero, overlapped book cover with links"},"align":"full","className":"is-style-section-1","style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80","left":"var:preset|spacing|50","right":"var:preset|spacing|50"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull is-style-section-1" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--80);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--80);padding-left:var(--wp--preset--spacing--50)"><!-- wp:group {"align":"wide","layout":{"type":"default"}} -->
@@ -16,18 +16,63 @@
 <!-- wp:post-excerpt {"showMoreOnNewLine":false,"excerptLength":40,"fontSize":"large"} /--></div>
 <!-- /wp:group -->
 
+<!-- wp:post-featured-image {"isLink":true,"aspectRatio":"2/3","style":{"shadow":"var:preset|shadow|natural"},"blockVisibility":{"controlSets":[{"id":1,"enable":true,"controls":{"screenSize":{"hideOnScreenSize":{"large":true,"medium":true}}}}]}} /-->
+
 <!-- wp:group {"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
 <div class="wp-block-group"><!-- wp:spacer {"style":{"layout":{"selfStretch":"fit","flexSize":null},"spacing":{"margin":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|20"}}}} -->
 <div style="margin-top:var(--wp--preset--spacing--20);margin-bottom:var(--wp--preset--spacing--20)" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
 
-<!-- wp:block {"ref":32} /--></div>
+<!-- wp:columns {"metadata":{"name":"Buy Links"},"style":{"spacing":{"blockGap":{"top":"var:preset|spacing|20","left":"var:preset|spacing|20"}}}} -->
+<div class="wp-block-columns"><!-- wp:column {"verticalAlignment":"stretch"} -->
+<div class="wp-block-column is-vertically-aligned-stretch"><!-- wp:buttons {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","orientation":"horizontal","flexWrap":"wrap","justifyContent":"space-between"}} -->
+<div class="wp-block-buttons"><!-- wp:button {"width":100,"metadata":{"name":"Amazon","bindings":{"__default":{"source":"core/pattern-overrides"}}},"className":"is-style-fill"} -->
+<div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-fill"><a class="wp-block-button__link wp-element-button" href="#">
+											Amazon										</a></div>
+<!-- /wp:button -->
+
+<!-- wp:button {"width":100,"metadata":{"name":"IndieBound","bindings":{"__default":{"source":"core/pattern-overrides"}}},"className":"is-style-fill"} -->
+<div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-fill"><a class="wp-block-button__link wp-element-button" href="#">Indie Bound</a></div>
+<!-- /wp:button -->
+
+<!-- wp:button {"width":100,"metadata":{"name":"Apple Books","bindings":{"__default":{"source":"core/pattern-overrides"}}},"className":"is-style-fill"} -->
+<div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-fill"><a class="wp-block-button__link wp-element-button">Apple Books</a></div>
+<!-- /wp:button -->
+
+<!-- wp:button {"width":100,"metadata":{"name":"Additional 1","bindings":{"__default":{"source":"core/pattern-overrides"}}},"className":"is-style-fill"} -->
+<div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-fill"><a class="wp-block-button__link wp-element-button"></a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></div>
+<!-- /wp:column -->
+
+<!-- wp:column {"verticalAlignment":"stretch"} -->
+<div class="wp-block-column is-vertically-aligned-stretch"><!-- wp:buttons {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","orientation":"horizontal","flexWrap":"wrap","justifyContent":"space-between"}} -->
+<div class="wp-block-buttons"><!-- wp:button {"width":100,"metadata":{"name":"Audible","bindings":{"__default":{"source":"core/pattern-overrides"}}},"className":"is-style-fill"} -->
+<div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-fill"><a class="wp-block-button__link wp-element-button" href="#">
+											Audible										</a></div>
+<!-- /wp:button -->
+
+<!-- wp:button {"width":100,"metadata":{"name":"Barnes \u0026 Noble","bindings":{"__default":{"source":"core/pattern-overrides"}}},"className":"is-style-fill"} -->
+<div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-fill"><a class="wp-block-button__link wp-element-button" href="#">
+											Barnes &amp; Noble										</a></div>
+<!-- /wp:button -->
+
+<!-- wp:button {"width":100,"metadata":{"name":"Hudson Books","bindings":{"__default":{"source":"core/pattern-overrides"}}},"className":"is-style-fill"} -->
+<div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-fill"><a class="wp-block-button__link wp-element-button">Hudson Book Sellers</a></div>
+<!-- /wp:button -->
+
+<!-- wp:button {"width":100,"metadata":{"name":"Additional 2","bindings":{"__default":{"source":"core/pattern-overrides"}}},"className":"is-style-fill"} -->
+<div class="wp-block-button has-custom-width wp-block-button__width-100 is-style-fill"><a class="wp-block-button__link wp-element-button"></a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons --></div>
+<!-- /wp:column --></div>
+<!-- /wp:columns --></div>
 <!-- /wp:group --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column -->
 
 <!-- wp:column {"verticalAlignment":"top","width":"45%"} -->
-<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:45%"><!-- wp:post-featured-image {"isLink":true,"aspectRatio":"2/3"} /--></div>
+<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:45%"><!-- wp:post-featured-image {"isLink":true,"aspectRatio":"2/3","style":{"shadow":"var:preset|shadow|natural"},"blockVisibility":{"controlSets":[{"id":1,"enable":true,"controls":{"screenSize":{"hideOnScreenSize":{"small":true}}}}]}} /--></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
 <!-- /wp:group --></div>
@@ -35,12 +80,32 @@
 <!-- /wp:post-template --></div>
 <!-- /wp:query -->
 
-<!-- wp:query {"queryId":75,"query":{"perPage":10,"pages":0,"offset":"1","postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"exclude","inherit":false},"metadata":{"categories":["posts"],"patternName":"core/query-grid-posts","name":"Books Grid"},"align":"wide"} -->
-<div class="wp-block-query alignwide"><!-- wp:post-template {"layout":{"type":"grid","columnCount":null,"minimumColumnWidth":"22rem"}} -->
-<!-- wp:group {"style":{"spacing":{"padding":{"top":"30px","right":"30px","bottom":"30px","left":"30px"}}},"layout":{"inherit":false}} -->
-<div class="wp-block-group" style="padding-top:30px;padding-right:30px;padding-bottom:30px;padding-left:30px"><!-- wp:post-title {"isLink":true} /-->
+<!-- wp:query {"queryId":75,"query":{"perPage":10,"pages":0,"offset":"1","postType":"book","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"parents":[],"format":[]},"metadata":{"categories":["posts"],"patternName":"core/query-grid-posts","name":"Books Grid"},"align":"wide"} -->
+<div class="wp-block-query alignwide"><!-- wp:heading {"align":"wide"} -->
+<h2 class="wp-block-heading alignwide">More Books</h2>
+<!-- /wp:heading -->
 
-<!-- wp:post-featured-image {"isLink":true} /--></div>
+<!-- wp:post-template {"style":{"spacing":{"blockGap":"var:preset|spacing|50"}},"layout":{"type":"grid","columnCount":null,"minimumColumnWidth":"22rem"}} -->
+<!-- wp:group {"layout":{"inherit":false}} -->
+<div class="wp-block-group"><!-- wp:post-featured-image {"isLink":true,"style":{"shadow":"var:preset|shadow|natural"}} /-->
+
+<!-- wp:post-title {"level":3,"isLink":true} /--></div>
+<!-- /wp:group -->
+<!-- /wp:post-template --></div>
+<!-- /wp:query -->
+
+<!-- wp:query {"queryId":169,"query":{"perPage":4,"pages":0,"offset":0,"postType":"book","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"parents":[],"format":[]},"metadata":{"name":"More Books"},"align":"wide","layout":{"type":"default"}} -->
+<div class="wp-block-query alignwide"><!-- wp:heading {"align":"wide","style":{"typography":{"textTransform":"uppercase","fontStyle":"normal","fontWeight":"700","letterSpacing":"1.4px"}},"fontSize":"small"} -->
+<h2 class="wp-block-heading alignwide has-small-font-size" style="font-style:normal;font-weight:700;letter-spacing:1.4px;text-transform:uppercase">More Books</h2>
+<!-- /wp:heading -->
+
+<!-- wp:post-template {"align":"full","style":{"spacing":{"blockGap":"0"}},"layout":{"type":"default"}} -->
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30"}},"border":{"bottom":{"color":"var:preset|color|accent-6","width":"1px"},"top":[],"right":[],"left":[]}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center","justifyContent":"space-between"}} -->
+<div class="wp-block-group alignfull" style="border-bottom-color:var(--wp--preset--color--accent-6);border-bottom-width:1px;padding-top:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30)"><!-- wp:post-title {"level":3,"isLink":true,"fontSize":"large"} /-->
+
+<!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"core/post-meta","args":{"key":"publication_date"}}}},"fontSize":"small"} -->
+<p class="has-small-font-size"></p>
+<!-- /wp:paragraph --></div>
 <!-- /wp:group -->
 <!-- /wp:post-template --></div>
 <!-- /wp:query --></main>
