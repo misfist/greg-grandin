@@ -8,6 +8,10 @@
 			"title": "Page No Title"
 		},
 		{
+			"name": "single-book",
+			"title": "Single Books"
+		},
+		{
 			"name": "archive-book",
 			"title": "Book Archives"
 		}
@@ -45,7 +49,7 @@
 					"slug": "accent-3"
 				},
 				{
-					"color": "#b1a7a6",
+					"color": "#969696",
 					"name": "Accent 4",
 					"slug": "accent-4"
 				},
@@ -62,7 +66,7 @@
 			]
 		},
 		"layout": {
-			"contentSize": "980px",
+			"contentSize": "1024px",
 			"wideSize": "1240px"
 		},
 		"spacing": {
@@ -257,6 +261,11 @@
 					"radius": "100px"
 				}
 			},
+			"site-functionality/subtitle": {
+				"typography": {
+					"textTransform": "none"
+				}
+			},
 			"core/button": {
 				"border": {
 					"radius": "0px"
@@ -328,16 +337,27 @@
 					"fontSize": "var(--wp--preset--font-size--medium)"
 				}
 			},
-			"core/post-comments-form": {
-				"css": "& textarea, input:not([type=submit]){border-radius:.25rem; border-color: var(--wp--preset--color--accent-6) !important;} & input[type=checkbox]{margin:0 .2rem 0 0 !important;} & label {font-size: var(--wp--preset--font-size--small); }",
-				"spacing": {
-					"padding": {
-						"bottom": "var(--wp--preset--spacing--40)",
-						"top": "var(--wp--preset--spacing--40)"
+			"site-functionality/publication-date": {
+				"color": {
+					"text": "var(--wp--preset--color--accent-4)"
+				},
+				"elements": {
+					"link": {
+						":hover": {
+							"typography": {
+								"textDecoration": "underline"
+							}
+						},
+						"color": {
+							"text": "var(--wp--preset--color--accent-4)"
+						},
+						"typography": {
+							"textDecoration": "none"
+						}
 					}
 				},
 				"typography": {
-					"fontSize": "var(--wp--preset--font-size--medium)"
+					"fontSize": "var(--wp--preset--font-size--small)"
 				}
 			},
 			"core/post-date": {
@@ -387,6 +407,9 @@
 							"textDecoration": "none"
 						}
 					}
+				},
+				"typography": {
+					"textTransform": "uppercase"
 				}
 			},
 			"core/pullquote": {
@@ -590,7 +613,8 @@
 			},
 			"h2": {
 				"typography": {
-					"fontSize": "var(--wp--preset--font-size--x-large)"
+					"fontSize": "var(--wp--preset--font-size--x-large)",
+					"textTransform": "uppercase"
 				}
 			},
 			"h3": {
@@ -624,8 +648,7 @@
 					"fontStyle": "normal",
 					"fontWeight": "700",
 					"letterSpacing": "-0.1px",
-					"lineHeight": "1.125",
-					"textTransform": "uppercase"
+					"lineHeight": "1.125"
 				}
 			},
 			"link": {
