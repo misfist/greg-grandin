@@ -5,6 +5,7 @@
  * Categories: text
  * Block Types: core/paragraph
  * Description: Prints the publication date text help of the Block Bindings API.
+ * Inserter: false
  *
  * @package WordPress
  * @subpackage Greg_Grandin

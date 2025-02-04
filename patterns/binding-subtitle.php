@@ -4,6 +4,7 @@
  * Slug: greg-grandin/binding-subtitle
  * Categories: text
  * Description: Prints linked subtitle with the help of the Block Bindings API.
+ * Inserter: false
  *
  * @package WordPress
  * @subpackage Greg_Grandin
