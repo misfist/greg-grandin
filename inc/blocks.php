@@ -135,7 +135,7 @@ function subtitle_binding( array $source_args, \WP_Block $block_instance ): stri
  */
 function full_title_binding( array $source_args, \WP_Block $block_instance ): string {
 	$post_id = $block_instance->context['postId'] ?? get_the_ID();
-	$title    = get_the_title( $post_id );
+	$title   = get_the_title( $post_id );
 	if ( ! empty( $post_id ) ) {
 		$subtitle = get_post_meta( $post_id, 'subtitle', true );
 		if ( $subtitle ) {
@@ -350,6 +350,7 @@ function register_template( array $args ): array {
 		),
 	);
 	$args['template'] = $template;
+	// $args['template_lock'] = 'contentOnly';
 	return $args;
 }
 add_action( 'register_book_post_type_args', __NAMESPACE__ . '\register_template' );
