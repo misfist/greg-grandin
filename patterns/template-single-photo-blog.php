@@ -73,12 +73,7 @@
 		<!-- /wp:columns -->
 		<!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"top":"var:preset|spacing|50","bottom":"0"}}},"layout":{"type":"default"}} -->
 		<div class="wp-block-group alignwide" style="margin-top:var(--wp--preset--spacing--50);margin-bottom:0">
-			<!-- wp:group {"ariaLabel":"<?php esc_attr_e( 'Post navigation', 'greg-grandin' ); ?>","tagName":"nav","style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
-			<nav aria-label="<?php esc_attr_e( 'Post navigation', 'greg-grandin' ); ?>" class="wp-block-group" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40)">
-				<!-- wp:post-navigation-link {"type":"previous","label":"<?php esc_html_e( 'Previous Photo', 'greg-grandin' ); ?>","fontSize":"small"} /-->
-				<!-- wp:post-navigation-link {"label":"<?php esc_html_e( 'Next Photo', 'greg-grandin' ); ?>","fontSize":"small"} /-->
-			</nav>
-			<!-- /wp:group -->
+			<!-- wp:pattern {"slug":"greg-grandin/post-navigation"} /-->
 		</div>
 		<!-- /wp:group -->
 		<!-- wp:post-featured-image {"aspectRatio":"auto","align":"wide"} /-->

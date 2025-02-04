@@ -17,5 +17,4 @@
 ?>
 
 <!-- wp:pattern {"slug":"greg-grandin/hero-book"} /-->
-<!-- wp:pattern {"slug":"greg-grandin/cta-book-links"} /-->
 <!-- wp:pattern {"slug":"greg-grandin/banner-about-book"} /-->
