@@ -203,117 +203,309 @@ function display_book_buttons() {
  * @return array $args
  */
 function register_template( array $args ): array {
-	$template = array(
+	$banner = array(
+		'core/group',
 		array(
-			'core/paragraph',
-			array(
-				'placeholder' => __( 'Add subtitle...', 'greg-grandin' ),
-				'className'   => 'is-style-subtitle',
-				'metadata'    => array(
-					'bindings' => array(
-						'content' => array(
-							'source' => 'core/post-meta',
-							'args'   => array( 'key' => 'subtitle' ),
-						),
+			'metadata'  => array(
+				'categories' => array(
+					0 => 'banner',
+				),
+				'name'       => 'About the Book',
+			),
+			'align'     => 'full',
+			'className' => 'is-style-section-1',
+			'style'     => array(
+				'spacing' => array(
+					'padding' => array(
+						'top'    => 'var:preset|spacing|50',
+						'right'  => 'var:preset|spacing|50',
+						'bottom' => 'var:preset|spacing|50',
+						'left'   => 'var:preset|spacing|50',
+					),
+					'margin'  => array(
+						'top'    => '0',
+						'bottom' => '0',
 					),
 				),
+			),
+			'layout'    => array(
+				'type' => 'default',
 			),
 		),
 		array(
-			'core/group',
 			array(
-				'metadata'  => array( 'name' => 'Book Metadata' ),
-				'className' => 'is-style-section-1',
-				'layout'    => array( 'type' => 'default' ),
-			),
-			array(
+				'core/group',
 				array(
-					'core/paragraph',
+					'align'     => 'full',
+					'className' => 'is-style-section-1',
+					'layout'    =>
 					array(
-						'placeholder' => __( 'Add publication date...', 'greg-grandin' ),
-						'className'   => 'is-style-postmeta',
-						'metadata'    => array(
-							'name'     => __( 'Publication Date', 'greg-grandin' ),
-							'bindings' => array(
-								'content' => array(
-									'source' => 'greg-grandin/publication-date',
-								),
-							),
-						),
-						'fontSize'    => 'small',
+						'type' => 'constrained',
 					),
 				),
 				array(
-					'core/paragraph',
 					array(
-						'placeholder' => __( 'Add publisher...', 'greg-grandin' ),
-						'className'   => 'is-style-postmeta',
-						'metadata'    => array(
-							'name'     => __( 'Publisher', 'greg-grandin' ),
-							'bindings' => array(
-								'content' => array(
-									'source' => 'core/post-meta',
-									'args'   => array( 'key' => 'publisher' ),
+						'core/columns',
+						array(
+							'verticalAlignment' => 'top',
+							'align'             => 'wide',
+						),
+						array(
+							array(
+								'core/column',
+								array(
+									'verticalAlignment' => 'top',
+									'width'             => '55%',
+								),
+								array(
+									array(
+										'core/group',
+										array(
+											'style'  => array(
+												'dimensions' => array(
+													'minHeight' => '100%',
+												),
+											),
+											'layout' => array(
+												'type'     => 'flex',
+												'orientation' => 'vertical',
+												'justifyContent' => 'left',
+												'flexWrap' => 'nowrap',
+												'verticalAlignment' => 'top',
+											),
+										),
+										array(
+											array(
+												'core/group',
+												array(
+													'style' => array(
+														'spacing' => array(
+															'blockGap' => 'var:preset|spacing|30',
+														),
+													),
+													'layout' => array(
+														'type' => 'constrained',
+													),
+												),
+												array(
+													array(
+														'core/heading',
+														array(
+															'metadata' => array(
+																'name' => 'Heading',
+																'bindings' => array(
+																	'__default' => array(
+																		'source' => 'core/pattern-overrides',
+																	),
+																),
+															),
+															'align' => 'wide',
+															'style' =>
+															array(
+																'typography' => array(
+																	'textTransform' => 'uppercase',
+																	'fontStyle' => 'normal',
+																	'fontWeight' => '700',
+																	'letterSpacing' => '1.4px',
+																),
+															),
+															'fontSize' => 'small',
+														),
+													),
+													array(
+														'core/post-title',
+														array(
+															'isLink' => false,
+															'fontSize' => 'xx-large',
+															'placeholder' => __( 'Add Book Title...', 'greg-grandin' ),
+														),
+													),
+													array(
+														'site-functionality/subtitle',
+														array(
+															'className' => 'is-subtitle-style',
+														),
+													),
+													array(
+														'core/post-excerpt',
+														array(),
+													),
+												),
+											),
+										),
+									),
+									array(
+										'core/group',
+										array(
+											'layout' =>
+											array(
+												'type' => 'flex',
+												'orientation' => 'vertical',
+												'justifyContent' => 'stretch',
+											),
+										),
+										array(
+											array(
+												'core/spacer',
+												array(
+													'style' => array(
+														'layout' => array(
+															'selfStretch' => 'fit',
+															'flexSize' => null,
+														),
+														'spacing' => array(
+															'margin' => array(
+																'top' => 'var:preset|spacing|20',
+																'bottom' => 'var:preset|spacing|20',
+															),
+														),
+													),
+												),
+											),
+											array(
+												'site-functionality/buy-buttons',
+												array(),
+												array(
+													array(
+														'core/buttons',
+														array(
+															'className' => 'buy-buttons',
+															'layout' => array(
+																'type' => 'flex',
+																'justifyContent' => 'center',
+																'flexWrap' => 'wrap',
+																'orientation' => 'horizontal',
+															),
+														),
+														array(
+															array(
+																'core/button',
+																array(
+																	'className' => 'buy-button',
+																	'placeholder' => 'Add Button...',
+																),
+															),
+															array(
+																'core/button',
+																array(
+																	'className' => 'buy-button',
+																	'placeholder' => 'Add Button...',
+																),
+															),
+															array(
+																'core/button',
+																array(
+																	'className' => 'buy-button',
+																	'placeholder' => 'Add Button...',
+																),
+															),
+															array(
+																'core/button',
+																array(
+																	'className' => 'buy-button',
+																	'placeholder' => 'Add Button...',
+																),
+															),
+														),
+													),
+												),
+											),
+											array(
+												'core/spacer',
+												array(
+													'style' => array(
+														'layout' => array(
+															'selfStretch' => 'fit',
+															'flexSize' => null,
+														),
+														'spacing' => array(
+															'margin' => array(
+																'top' => 'var:preset|spacing|20',
+																'bottom' => 'var:preset|spacing|20',
+															),
+														),
+													),
+												),
+											),
+										),
+									),
+								),
+							),
+							array(
+								'core/column',
+								array(
+									'verticalAlignment' => 'top',
+									'width'             => '45%',
+								),
+								array(
+									array(
+										'core/post-featured-image',
+										array(
+											'isLink'      => false,
+											'aspectRatio' => '2/3',
+											'style'       =>
+											array(
+												'shadow' => 'var:preset|shadow|natural',
+											),
+										),
+									),
+									array(
+										'core/group',
+										array(
+											'layout' =>
+											array(
+												'type'     => 'flex',
+												'flexWrap' => 'nowrap',
+												'justifyContent' => 'center',
+											),
+										),
+										array(
+											array(
+												'site-functionality/publisher',
+												array(
+													'style' => array(
+														'elements' => array(
+															'link' => array(
+																'color' => array(
+																	'text' => 'var:preset|color|accent-4',
+																),
+															),
+														),
+													),
+													'textColor' => 'accent-4',
+													'fontSize' => 'small',
+												),
+											),
+											array(
+												'site-functionality/publication-date',
+												array(
+													'style' => array(
+														'elements' => array(
+															'link' => array(
+																'color' => array(
+																	'text' => 'var:preset|color|accent-4',
+																),
+															),
+														),
+													),
+													'textColor' => 'accent-4',
+													'fontSize' => 'small',
+												),
+											),
+										),
+									),
 								),
 							),
 						),
-						'fontSize'    => 'small',
-					),
-				),
-				array(
-					'core/paragraph',
-					array(
-						'placeholder' => __( 'Add ISBN...', 'greg-grandin' ),
-						'className'   => 'is-style-postmeta',
-						'metadata'    => array(
-							'name'     => __( 'ISBN', 'greg-grandin' ),
-							'bindings' => array(
-								'content' => array(
-									'source' => 'core/post-meta',
-									'args'   => array( 'key' => 'isbn' ),
-								),
-							),
-						),
-						'fontSize'    => 'small',
 					),
 				),
 
 			),
 		),
-		array(
-			'core/buttons',
-			array(
-				'className' => 'is-style-buy-buttons',
-				'metadata'  => array(
-					'name' => __( 'Buy Buttons', 'greg-grandin' ),
-				),
-			),
-			array(
-				array(
-					'core/button',
-					array(
-						'placeholder' => __( 'Add buy button text and URL...', 'greg-grandin' ),
-						'className'   => 'is-style-button-text',
-						'text'        => esc_html__( 'Buy', 'greg-grandin' ),
-						'url'         => '',
-					),
-				),
-				array(
-					'core/button',
-					array(
-						'placeholder' => __( 'Add buy button text and URL...', 'greg-grandin' ),
-						'className'   => 'is-style-button-text',
-						'text'        => esc_html__( 'Buy', 'greg-grandin' ),
-						'url'         => '',
-					),
-				),
-			),
-		),
-		array(
-			'core/separator',
-			array(),
-			array(),
-		),
+	);
+
+	$template         = array(
+		$banner,
 		array(
 			'core/paragraph',
 			array(
