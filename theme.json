@@ -8,6 +8,13 @@
 			"title": "Page No Title"
 		},
 		{
+			"name": "page-no-featured-image",
+			"postTypes": [
+				"page"
+			],
+			"title": "Page No Featured Image"
+		},
+		{
 			"name": "single-book",
 			"title": "Single Books"
 		},
