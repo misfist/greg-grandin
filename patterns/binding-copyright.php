@@ -12,6 +12,15 @@
  */
 
 ?>
-<!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"greg-grandin/copyright"}}},"fontSize":"small"} -->
+<!-- wp:paragraph {
+	"metadata": {
+		"bindings": {
+			"content": {
+				"source": "greg-grandin/copyright"
+			}
+		}
+	},
+	"fontSize": "small"
+} -->
 <p class="has-small-font-size"></p>
 <!-- /wp:paragraph -->

@@ -45,10 +45,7 @@
 
 					<!-- wp:group {"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
 					<div class="wp-block-group">
-						<!-- wp:spacer {"style":{"layout":{"selfStretch":"fit","flexSize":null},"spacing":{"margin":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|20"}}}} -->
-						<div style="margin-top:var(--wp--preset--spacing--20);margin-bottom:var(--wp--preset--spacing--20)"
-							aria-hidden="true" class="wp-block-spacer"></div>
-						<!-- /wp:spacer -->
+						<!-- wp:pattern {"slug":"greg-grandin/element-spacer"} /-->
 
 						<!-- wp:site-functionality/buy-buttons -->
 						<div class="wp-block-site-functionality-buy-buttons">
@@ -66,10 +63,7 @@
 						</div>
 						<!-- /wp:site-functionality/buy-buttons -->
 
-						<!-- wp:spacer {"style":{"layout":{"selfStretch":"fit","flexSize":null},"spacing":{"margin":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|20"}}}} -->
-						<div style="margin-top:var(--wp--preset--spacing--20);margin-bottom:var(--wp--preset--spacing--20)"
-							aria-hidden="true" class="wp-block-spacer"></div>
-						<!-- /wp:spacer -->
+						<!-- wp:pattern {"slug":"greg-grandin/element-spacer"} /-->
 					</div>
 					<!-- /wp:group -->
 				</div>

@@ -26,9 +26,7 @@
 				<span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim" style="background-color:#818181"></span>
 				<img class="wp-block-cover__image-background" alt="<?php esc_attr_e( 'Black and white photo focusing on a woman and a child from afar.', 'greg-grandin' ); ?>" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/link-in-bio-image.webp" data-object-fit="cover"/><div class="wp-block-cover__inner-container">
 
-				<!-- wp:spacer {"height":"var:preset|spacing|20"} -->
-				<div style="height:var(--wp--preset--spacing--20)" aria-hidden="true" class="wp-block-spacer"></div>
-				<!-- /wp:spacer -->
+				<!-- wp:pattern {"slug":"greg-grandin/element-spacer"} /-->
 			</div></div>
 			<!-- /wp:cover -->
 		</div>

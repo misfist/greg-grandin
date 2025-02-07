@@ -14,7 +14,7 @@
 ?>
 <!-- wp:heading {
 	"level": 3,
-	"className": "wp-block-post-title is-style-subtitle",
+	"className": "is-style-subtitle",
 	"metadata": {
 		"bindings": {
 			"content": {
@@ -26,5 +26,5 @@
 		}
 	}
 } -->
-<h3 class="wp-block-post-title is-style-subtitle"></h3>
+<h3 class="is-style-subtitle"></h3>
 <!-- /wp:heading -->

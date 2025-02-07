@@ -12,7 +12,24 @@
  */
 
 ?>
-<!-- wp:query {"queryId":45,"query":{"perPage":10,"pages":0,"offset":"1","postType":"book","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"taxQuery":null,"parents":[]}} -->
+<!-- wp:query {
+	"queryId": 45,
+	"query": {
+		"perPage": 10,
+		"pages": 0,
+		"offset": "1",
+		"postType": "book",
+		"order": "desc",
+		"orderBy": "date",
+		"author": "",
+		"search": "",
+		"exclude": [],
+		"sticky": "",
+		"inherit": false,
+		"taxQuery": null,
+		"parents": []
+	}
+} -->
 <div class="wp-block-query">
 	<!-- wp:post-template -->
 	<!-- wp:columns {"style":{"spacing":{"blockGap":{"top":"var:preset|spacing|50","left":"var:preset|spacing|50"},"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50"}},"border":{"top":{"color":"var:preset|color|accent-6","width":"1px"}}}} -->
@@ -22,9 +39,7 @@
 		<div class="wp-block-column">
 			<!-- wp:post-title {"isLink":true} /-->
 
-			<!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"core/post-meta","args":{"key":"subtitle"}}}},"className":"is-style-text-subtitle"} -->
-			<p class="is-style-text-subtitle"></p>
-			<!-- /wp:paragraph -->
+			<!-- wp:pattern {"slug":"greg-grandin/binding-subtitle"} /-->
 
 			<!-- wp:post-excerpt {"showMoreOnNewLine":false,"fontSize":"medium"} /-->
 		</div>

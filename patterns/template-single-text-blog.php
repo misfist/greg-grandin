@@ -36,7 +36,6 @@
 			<!-- wp:pattern {"slug":"greg-grandin/post-navigation"} /-->
 		</div>
 		<!-- /wp:group -->
-		<!-- wp:pattern {"slug":"greg-grandin/comments"} /-->
 	</div>
 	<!-- /wp:group -->
 </main>

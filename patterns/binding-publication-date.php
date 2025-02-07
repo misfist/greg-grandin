@@ -13,6 +13,25 @@
  */
 
 ?>
-<!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"greg-grandin/publication-date"}}},"fontSize":"small","style":{"elements":{"link":{"color":{"text":"var:preset|color|accent-4"}}}},"textColor":"accent-4"} -->
+<!-- wp:paragraph {
+	"metadata": {
+		"bindings": {
+			"content": {
+				"source": "greg-grandin/publication-date"
+			}
+		}
+	},
+	"fontSize": "small",
+	"style": {
+		"elements": {
+			"link": {
+				"color": {
+					"text": "var:preset|color|accent-4"
+				}
+			}
+		}
+	},
+	"textColor": "accent-4"
+} -->
 <p class="has-accent-4-color has-text-color has-link-color has-small-font-size"></p>
 <!-- /wp:paragraph -->
