@@ -14,7 +14,10 @@
 ?>
 <!-- wp:group {"tagName":"main","layout":{"type":"constrained"}} -->
 <main class="wp-block-group">
+
+	<?php if ( is_front_page() ) : ?>
 	<!-- wp:pattern {"slug":"greg-grandin/template-query-loop-book-latest"} /-->
+	<?php endif; ?>
 
 	<!-- wp:group {"align":"wide","layout":{"type":"default"}} -->
 	<div class="wp-block-group alignwide">

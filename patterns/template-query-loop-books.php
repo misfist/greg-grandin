@@ -10,14 +10,14 @@
  * @subpackage Greg_Grandin
  * @since Greg Grandin 1.0
  */
-
+$offset = ( is_front_page() ) ? 1 : 0;
 ?>
 <!-- wp:query {
 	"queryId": 45,
 	"query": {
 		"perPage": 10,
 		"pages": 0,
-		"offset": "1",
+		"offset": <?php echo intval( $offset ); ?>,
 		"postType": "book",
 		"order": "desc",
 		"orderBy": "date",
