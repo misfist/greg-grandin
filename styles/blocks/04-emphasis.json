@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"title": "Awards",
+	"slug": "text-emphasis",
+	"blockTypes": ["core/paragraph","core/heading"],
+	"styles": {
+		"typography": {
+			"fontFamily": "var:preset|font-family|libre-franklin",
+			"fontSize": "var:preset|font-size|large",
+			"lineHeight": "1.2",
+			"textTransform": "uppercase",
+			"fontWeight": "400",
+			"textAlign": "center"
+		},
+		"elements": {
+            "link": {
+                "color": {
+                    "text": "var:preset|color|accent-3"
+                }
+            }
+        },
+		"color": {
+			"text": "var:preset|color|accent-3"
+		}
+	}
+}
