@@ -29,7 +29,7 @@ add_action( 'after_setup_theme', __NAMESPACE__ . '\editor_style' );
  * @return void
  */
 function enqueue_styles(): void {
-	$asset_file_path = get_template_directory() . '/build/index.asset.php';
+	$asset_file_path = get_template_directory() . '/build/style.asset.php';
 
 	if ( is_readable( $asset_file_path ) ) {
 		$asset_file = include $asset_file_path;
