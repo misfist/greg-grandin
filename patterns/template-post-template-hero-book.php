@@ -25,7 +25,26 @@
 			<div class="wp-block-group" style="min-height:100%">
 				<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"constrained"}} -->
 				<div class="wp-block-group">
-					<!-- wp:heading {"metadata":{"name":"Heading","bindings":{"__default":{"source":"core/pattern-overrides"}}},"align":"wide","style":{"typography":{"textTransform":"uppercase","fontStyle":"normal","fontWeight":"700","letterSpacing":"1.4px"}},"fontSize":"small"} -->
+					<!-- wp:heading {
+						"metadata": {
+							"name": "Heading",
+							"bindings": {
+								"__default": {
+									"source": "core/pattern-overrides"
+								}
+							}
+						},
+						"align": "wide",
+						"style": {
+							"typography": {
+								"textTransform": "uppercase",
+								"fontStyle": "normal",
+								"fontWeight": "700",
+								"letterSpacing": "1.4px"
+							}
+						},
+						"fontSize": "small"
+					} -->
 					<h2 class="wp-block-heading alignwide has-small-font-size" style="font-style:normal;font-weight:700;letter-spacing:1.4px;text-transform:uppercase">
 						<?php
 						if ( is_singular( 'book' ) ) :
@@ -43,38 +62,64 @@
 
 					<!-- wp:post-title {"isLink":true,"fontSize":"xx-large"} /-->
 
-					<!-- wp:paragraph {"metadata":{"bindings":{"content":{"source":"core/post-meta","args":{"key":"subtitle"}}}},"className":"is-style-text-subtitle"} -->
-					<p class="is-style-text-subtitle"></p>
-					<!-- /wp:paragraph -->
+					<!-- wp:pattern {"slug":"greg-grandin/binding-subtitle"} /-->
 
-					<!-- wp:post-excerpt /-->
+					<!-- wp:post-featured-image {
+						"isLink": true,
+						"aspectRatio": "2/3",
+						"metadata": {
+							"name": "Featured Image - Mobile"
+						},
+						"style": {
+							"shadow": "var:preset|shadow|natural"
+						},
+						"blockVisibility": {
+							"controlSets": [
+								{
+									"id": 1,
+									"enable": true,
+									"controls": {
+										"screenSize": {
+											"hideOnScreenSize": {
+												"medium": true,
+												"large": true,
+												"extraLarge": true
+											}
+										}
+									}
+								}
+							]
+						}
+					} /-->
+
+					<!-- wp:post-excerpt {
+						"blockVisibility": {
+							"controlSets": [
+								{
+									"id": 1,
+									"enable": true,
+									"controls": {
+										"screenSize": {
+											"hideOnScreenSize": {
+												"small": true,
+												"medium": true
+											}
+										}
+									}
+								}
+							]
+						}
+					} /-->
 				</div>
 				<!-- /wp:group -->
 
 				<!-- wp:group {"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
 				<div class="wp-block-group">
-					<!-- wp:spacer {"style":{"layout":{"selfStretch":"fit","flexSize":null},"spacing":{"margin":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|20"}}}} -->
-					<div style="margin-top:var(--wp--preset--spacing--20);margin-bottom:var(--wp--preset--spacing--20)"
-						aria-hidden="true" class="wp-block-spacer"></div>
-					<!-- /wp:spacer -->
+					<!-- wp:pattern {"slug":"greg-grandin/element-spacer"} /-->
 
-					<!-- wp:buttons {"className":"buy-buttons"} -->
-					<div class="wp-block-buttons buy-buttons"><!-- wp:button -->
-						<div class="wp-block-button"><a class="wp-block-button__link wp-element-button"></a>
-						</div>
-						<!-- /wp:button -->
-
-						<!-- wp:button -->
-						<div class="wp-block-button"><a class="wp-block-button__link wp-element-button"></a>
-						</div>
-						<!-- /wp:button -->
-					</div>
-					<!-- /wp:buttons -->
-
-					<!-- wp:spacer {"style":{"layout":{"selfStretch":"fit","flexSize":null},"spacing":{"margin":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|20"}}}} -->
-					<div style="margin-top:var(--wp--preset--spacing--20);margin-bottom:var(--wp--preset--spacing--20)"
-						aria-hidden="true" class="wp-block-spacer"></div>
-					<!-- /wp:spacer -->
+					<!-- wp:pattern {"slug":"greg-grandin/buttons"} /-->
+				
+					<!-- wp:pattern {"slug":"greg-grandin/element-spacer"} /-->
 				</div>
 				<!-- /wp:group -->
 			</div>
@@ -84,7 +129,32 @@
 
 		<!-- wp:column {"verticalAlignment":"top","width":"45%"} -->
 		<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:45%">
-			<!-- wp:post-featured-image {"isLink":true,"aspectRatio":"2/3","style":{"shadow":"var:preset|shadow|natural"}} /-->
+			<!-- wp:post-featured-image {
+				"isLink": true,
+				"aspectRatio": "2/3",
+				"metadata": {
+					"name": "Featured Image - Desktop"
+				},
+				"style": {
+					"shadow": "var:preset|shadow|natural"
+				},
+				"blockVisibility": {
+					"controlSets": [
+						{
+							"id": 1,
+							"enable": true,
+							"controls": {
+								"screenSize": {
+									"hideOnScreenSize": {
+										"small": true,
+										"extraSmall": true
+									}
+								}
+							}
+						}
+					]
+				}
+			} /-->
 		</div>
 		<!-- /wp:column -->
 	</div>

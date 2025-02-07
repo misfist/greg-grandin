@@ -11,10 +11,11 @@
  * @subpackage Greg_Grandin
  * @since Greg Grandin 1.0
  */
+use function Greg_Grandin\display_book_buttons;
 ?>
 
-<!-- wp:group {"metadata":{"categories":["banner"],"name":"About the Book"},"align":"full","className":"is-style-section-1","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50","right":"var:preset|spacing|50"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"default"}} -->
-<div class="wp-block-group alignfull is-style-section-1" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50)">
+<!-- wp:group {"metadata":{"categories":["banner"],"name":"About the Book"},"align":"full","className":"is-style-section-1 book-hero","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50","right":"var:preset|spacing|50"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"default"}} -->
+<div class="wp-block-group alignfull is-style-section-1 book-hero" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50)">
 	<!-- wp:group {"align":"full","className":"is-style-section-1","layout":{"type":"constrained"}} -->
 	<div class="wp-block-group alignfull is-style-section-1">
 		<!-- wp:columns {"verticalAlignment":"top","align":"wide"} -->
@@ -31,18 +32,74 @@
 
 						<!-- wp:post-title {"isLink":false,"fontSize":"xx-large"} /-->
 
-						<!-- wp:site-functionality/subtitle /-->
+						<!-- wp:heading {
+							"metadata": {
+								"bindings": {
+									"content": {
+										"source": "core/post-meta",
+										"args": {
+											"key": "subtitle"
+										}
+									}
+								}
+							},
+							"className": "is-style-text-subtitle"
+						} -->
+						<h3 class="wp-block-post-title is-style-subtitle"></h3>
+						<!-- /wp:heading -->
 
-						<!-- wp:post-excerpt /-->
+						<!-- wp:post-featured-image {
+							"isLink": true,
+							"aspectRatio": "2/3",
+							"metadata": {
+								"name": "Featured Image - Mobile"
+							},
+							"style": {
+								"shadow": "var:preset|shadow|natural"
+							},
+							"blockVisibility": {
+								"controlSets": [
+									{
+										"id": 1,
+										"enable": true,
+										"controls": {
+											"screenSize": {
+												"hideOnScreenSize": {
+													"medium": true,
+													"large": true,
+													"extraLarge": true
+												}
+											}
+										}
+									}
+								]
+							}
+						} /-->
+
+						<!-- wp:post-excerpt {
+							"controlSets": [
+								{
+									"id": 1,
+									"enable": true,
+									"controls": {
+										"screenSize": {
+											"hideOnScreenSize": {
+												"medium": true,
+												"small": true
+											}
+										}
+									}
+								}
+							]
+						} /-->
 					</div>
 					<!-- /wp:group -->
 
 					<!-- wp:group {"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
 					<div class="wp-block-group">
-						<!-- wp:spacer {"style":{"layout":{"selfStretch":"fit","flexSize":null},"spacing":{"margin":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|20"}}}} -->
-						<div style="margin-top:var(--wp--preset--spacing--20);margin-bottom:var(--wp--preset--spacing--20)"
-							aria-hidden="true" class="wp-block-spacer"></div>
-						<!-- /wp:spacer -->
+						<!-- wp:pattern {"slug":"greg-grandin/element-spacer"} /-->
+
+						<?php display_book_buttons(); ?>
 
 						<!-- wp:site-functionality/buy-buttons -->
 						<div class="wp-block-site-functionality-buy-buttons">
@@ -60,10 +117,7 @@
 						</div>
 						<!-- /wp:site-functionality/buy-buttons -->
 
-						<!-- wp:spacer {"style":{"layout":{"selfStretch":"fit","flexSize":null},"spacing":{"margin":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|20"}}}} -->
-						<div style="margin-top:var(--wp--preset--spacing--20);margin-bottom:var(--wp--preset--spacing--20)"
-							aria-hidden="true" class="wp-block-spacer"></div>
-						<!-- /wp:spacer -->
+						<!-- wp:pattern {"slug":"greg-grandin/element-spacer"} /-->
 					</div>
 					<!-- /wp:group -->
 				</div>
@@ -73,15 +127,32 @@
 
 			<!-- wp:column {"verticalAlignment":"top","width":"45%"} -->
 			<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:45%">
-				<!-- wp:post-featured-image {"isLink":false,"aspectRatio":"2/3","style":{"shadow":"var:preset|shadow|natural"}} /-->
-
-				<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center"}} -->
-				<div class="wp-block-group">
-					<!-- wp:site-functionality/publisher {"style":{"elements":{"link":{"color":{"text":"var:preset|color|accent-4"}}}},"textColor":"accent-4","fontSize":"small"} /-->
-
-				<!-- wp:site-functionality/publication-date {"style":{"elements":{"link":{"color":{"text":"var:preset|color|accent-4"}}}},"textColor":"accent-4","fontSize":"small"} /-->
-				</div>
-				<!-- /wp:group -->
+				<!-- wp:post-featured-image {
+				"isLink": true,
+				"aspectRatio": "2/3",
+				"metadata": {
+					"name": "Featured Image - Desktop"
+				},
+				"style": {
+					"shadow": "var:preset|shadow|natural"
+				},
+				"blockVisibility": {
+					"controlSets": [
+						{
+							"id": 1,
+							"enable": true,
+							"controls": {
+								"screenSize": {
+									"hideOnScreenSize": {
+										"small": true,
+										"extraSmall": true
+									}
+								}
+							}
+						}
+					]
+				}
+			} /-->
 			</div>
 			<!-- /wp:column -->
 		</div>
