@@ -503,9 +503,82 @@ function register_template( array $args ): array {
 			),
 		),
 	);
+	$metadata = array(
+		'site-functionality/book-details',
+		array(
+			'className' => 'metadata',
+			'lock'      => array(
+				'move'   => true,
+				'remove' => true,
+			),
+		),
+		array(),
+	);
 
 	$template         = array(
-		$banner,
+		$metadata,
+		array(
+			'site-functionality/buy-buttons',
+			array(
+				'lock' => array(
+					'move'   => false,
+					'remove' => true,
+				),
+			),
+			array(
+				array(
+					'core/buttons',
+					array(
+						'className' => 'buy-buttons',
+						'layout'    => array(
+							'type'           => 'flex',
+							'justifyContent' => 'center',
+							'flexWrap'       => 'wrap',
+							'orientation'    => 'horizontal',
+						),
+					),
+					array(
+						array(
+							'core/button',
+							array(
+								'className'   => 'buy-button',
+								'placeholder' => 'Add Button...',
+							),
+						),
+						array(
+							'core/button',
+							array(
+								'className'   => 'buy-button',
+								'placeholder' => 'Add Button...',
+							),
+						),
+						array(
+							'core/button',
+							array(
+								'className'   => 'buy-button',
+								'placeholder' => 'Add Button...',
+							),
+						),
+						array(
+							'core/button',
+							array(
+								'className'   => 'buy-button',
+								'placeholder' => 'Add Button...',
+							),
+						),
+					),
+				),
+			),
+		),
+		array(
+			'core/heading',
+			array(
+				'content'   => __( 'About the Book', 'greg-grandin' ),
+				'className' => 'is-style-text-subtitle',
+				'level'     => 2,
+			),
+			array(),
+		),
 		array(
 			'core/paragraph',
 			array(
