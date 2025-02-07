@@ -183,7 +183,7 @@ function display_book_buttons() {
 
 	foreach ( $blocks as $block ) {
 
-		if ( 'core/buttons' === $block['blockName'] ) {
+		if ( 'site-functionality/buy-buttons' === $block['blockName'] ) {
 
 			echo apply_filters( 'the_content', render_block( $block ) );
 
