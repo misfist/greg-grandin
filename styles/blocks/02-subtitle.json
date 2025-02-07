@@ -6,9 +6,11 @@
 	"blockTypes": ["core/heading", "core/paragraph"],
 	"styles": {
 		"typography": {
-			"fontSize": "clamp(1.5rem, 1.5rem + ((1vw - 0.2rem) * 0.392), 1.75rem)",
+			"fontFamily": "var:preset|font-family|libre-franklin",
+			"fontSize": "var:preset|font-size|large",
 			"lineHeight": "1.2",
-			"textTransform": "capitalize"
+			"textTransform": "none",
+			"fontWeight": "400"
 		}
 	}
 }

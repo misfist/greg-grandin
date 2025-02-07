@@ -231,11 +231,11 @@
 				},
 				{
 					"fluid": {
-						"max": "1.375rem",
-						"min": "1.125rem"
+						"max": "1.75rem",
+						"min": "1.25rem"
 					},
 					"name": "Large",
-					"size": "1.38rem",
+					"size": "1.25rem",
 					"slug": "large"
 				},
 				{
@@ -414,9 +414,6 @@
 							"textDecoration": "none"
 						}
 					}
-				},
-				"typography": {
-					"textTransform": "uppercase"
 				}
 			},
 			"core/pullquote": {
@@ -620,8 +617,7 @@
 			},
 			"h2": {
 				"typography": {
-					"fontSize": "var(--wp--preset--font-size--x-large)",
-					"textTransform": "uppercase"
+					"fontSize": "var(--wp--preset--font-size--x-large)"
 				}
 			},
 			"h3": {
@@ -654,11 +650,13 @@
 					"fontFamily": "var(--wp--preset--font-family--dm-sans)",
 					"fontStyle": "normal",
 					"fontWeight": "700",
-					"letterSpacing": "-0.1px",
 					"lineHeight": "1.125"
 				}
 			},
 			"link": {
+				"typography": {
+					"textDecoration": "none"
+				},
 				":hover": {
 					"color": {
 						"text": "var(--wp--preset--color--accent-1)"
