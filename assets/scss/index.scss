@@ -1,1 +1,17 @@
 //What is the problem here?
+
+.is-style-subtitle,
+.is-style-subtitle a {
+	font-weight: 400;
+	font-size: var(--wp--preset--font-size--large);
+    font-family: var(--wp--preset--font-family--libre-franklin);
+}
+
+.block-visibility-hide-large-screen {
+	max-width: 400px;
+	width: 100%;
+}
+
+main:has( .book-hero ) {
+	margin-top: 0 !important;
+}
