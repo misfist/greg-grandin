@@ -43,9 +43,9 @@ use function Greg_Grandin\display_book_buttons;
 									}
 								}
 							},
-							"className": "is-style-text-subtitle"
+							"className": "wp-block-post-title is-style-subtitle"
 						} -->
-						<h3 class="wp-block-post-title is-style-subtitle"></h3>
+						<h2 class="wp-block-heading wp-block-post-title is-style-subtitle"></h2>
 						<!-- /wp:heading -->
 
 						<!-- wp:paragraph {
