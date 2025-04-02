@@ -48,6 +48,23 @@ use function Greg_Grandin\display_book_buttons;
 						<h3 class="wp-block-post-title is-style-subtitle"></h3>
 						<!-- /wp:heading -->
 
+						<!-- wp:paragraph {
+							"metadata": {
+								"bindings": {
+									"content": {
+										"source": "core/post-meta",
+										"args": {
+											"key": "blurb"
+										}
+									}
+								}
+							},
+							"className": "book-blurb is-style-text-intro"
+						} -->
+						<p class="book-blurb is-style-text-intro"></p>
+						<!-- /wp:paragraph -->
+
+
 						<!-- wp:post-featured-image {
 							"isLink": true,
 							"aspectRatio": "2/3",
