@@ -7,6 +7,10 @@
     font-family: var(--wp--preset--font-family--libre-franklin);
 }
 
+.has-text-align-left {
+	text-align: left !important;
+}
+
 .block-visibility-hide-large-screen {
 	max-width: 400px;
 	width: 100%;

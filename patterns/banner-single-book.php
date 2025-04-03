@@ -59,9 +59,9 @@ use function Greg_Grandin\display_book_buttons;
 									}
 								}
 							},
-							"className": "book-blurb is-style-text-intro"
+							"className": "book-blurb has-text-align-left is-style-text-emphasis"
 						} -->
-						<p class="book-blurb is-style-text-intro"></p>
+						<p class="book-blurb has-text-align-left is-style-text-emphasis"></p>
 						<!-- /wp:paragraph -->
 
 
