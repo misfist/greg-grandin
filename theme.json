@@ -231,6 +231,15 @@
 				},
 				{
 					"fluid": {
+						"max": "1.5rem",
+						"min": "1.25rem"
+					},
+					"name": "Medium Large",
+					"size": "1.5rem",
+					"slug": "medium-large"
+				},
+				{
+					"fluid": {
 						"max": "1.75rem",
 						"min": "1.25rem"
 					},
@@ -574,6 +583,11 @@
 			"core/term-description": {
 				"typography": {
 					"fontSize": "var(--wp--preset--font-size--medium)"
+				}
+			},
+			"core/heading": {
+				"typography": {
+					"fontWeight": "700"
 				}
 			}
 		},

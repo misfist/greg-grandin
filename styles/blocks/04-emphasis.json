@@ -7,11 +7,10 @@
 	"styles": {
 		"typography": {
 			"fontFamily": "var:preset|font-family|libre-franklin",
-			"fontSize": "var:preset|font-size|large",
+			"fontSize": "var:preset|font-size|medium-large",
 			"lineHeight": "1.2",
 			"textTransform": "uppercase",
-			"fontWeight": "400",
-			"textAlign": "center"
+			"fontWeight": "400"
 		},
 		"elements": {
             "link": {

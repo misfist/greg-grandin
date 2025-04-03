@@ -43,10 +43,27 @@ use function Greg_Grandin\display_book_buttons;
 									}
 								}
 							},
-							"className": "is-style-text-subtitle"
+							"className": "wp-block-post-title is-style-subtitle"
 						} -->
-						<h3 class="wp-block-post-title is-style-subtitle"></h3>
+						<h2 class="wp-block-heading wp-block-post-title is-style-subtitle"></h2>
 						<!-- /wp:heading -->
+
+						<!-- wp:paragraph {
+							"metadata": {
+								"bindings": {
+									"content": {
+										"source": "core/post-meta",
+										"args": {
+											"key": "blurb"
+										}
+									}
+								}
+							},
+							"className": "book-blurb has-text-align-left is-style-text-emphasis"
+						} -->
+						<p class="book-blurb has-text-align-left is-style-text-emphasis"></p>
+						<!-- /wp:paragraph -->
+
 
 						<!-- wp:post-featured-image {
 							"isLink": true,
