@@ -13,8 +13,8 @@
 $offset  = ( is_singular() ) ? 0 : 1;
 $exclude = ( is_singular() ) ? get_the_ID() : 0;
 ?>
-<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignwide" style="padding-bottom:var(--wp--preset--spacing--60)">
+<!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained"},"className":"post-list book-list"} -->
+<div class="wp-block-group alignwide post-list book-list" style="padding-bottom:var(--wp--preset--spacing--60)">
 	<!-- wp:heading {"align":"wide","style":{"typography":{"textTransform":"uppercase","fontStyle":"normal","fontWeight":"700","letterSpacing":"1.4px"}},"fontSize":"small"} -->
 	<h2 class="wp-block-heading alignwide has-small-font-size" style="font-style:normal;font-weight:700;letter-spacing:1.4px;text-transform:uppercase"><?php esc_html_e( 'More books', 'greg-grandin' ); ?></h2>
 	<!-- /wp:heading -->
