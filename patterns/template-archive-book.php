@@ -21,7 +21,7 @@
 
 	<!-- wp:group {"align":"wide","layout":{"type":"default"}} -->
 	<div class="wp-block-group alignwide">
-		<!-- wp:pattern {"slug":"greg-grandin/template-query-loop-books"} /-->
+		<!-- wp:pattern {"slug":"greg-grandin/query-loop-books"} /-->
 	</div>
 	<!-- /wp:group -->
 </main>
