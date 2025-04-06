@@ -170,12 +170,9 @@ function full_title_binding( array $source_args, \WP_Block $block_instance ): st
  */
 function publication_date_binding( array $source_args, $block_instance ): string {
 	$post_id = $block_instance->context['postId'];
-	if ( isset( $source_args['key'] ) ) {
-		$publication_date = get_post_meta( $post_id, $source_args['key'], true );
-		if ( $publication_date ) {
-			$format = get_option( 'date_format' );
-			return date( $format, strtotime( $publication_date ) );
-		}
+	if ( $publication_date ) {
+		$format = get_option( 'date_format' );
+		return date( $format, strtotime( $publication_date ) );
 	}
 	return get_the_date();
 }
@@ -187,12 +184,10 @@ function publication_date_binding( array $source_args, $block_instance ): string
  */
 function publication_date_full_binding( array $source_args, $block_instance ): string {
 	$post_id = $block_instance->context['postId'];
-	if ( isset( $source_args['key'] ) ) {
-		$publication_date = get_post_meta( $post_id, $source_args['key'], true );
-		if ( $publication_date ) {
-			$format = 'F j, Y';
-			return date( $format, strtotime( $publication_date ) );
-		}
+	$publication_date = get_post_meta( $post_id, 'publication_date', true );
+	if ( $publication_date ) {
+		$format = 'F j, Y';
+		return date( $format, strtotime( $publication_date ) );
 	}
 	return get_the_date();
 }
