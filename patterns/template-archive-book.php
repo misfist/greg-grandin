@@ -16,7 +16,7 @@
 <main class="wp-block-group">
 
 	<?php if ( is_front_page() ) : ?>
-	<!-- wp:pattern {"slug":"greg-grandin/template-query-loop-book-latest"} /-->
+	<!-- wp:pattern {"slug":"greg-grandin/query-book-latest} /-->
 	<?php endif; ?>
 
 	<!-- wp:group {"align":"wide","layout":{"type":"default"}} -->
