@@ -74,12 +74,6 @@ $posts_per_page = get_option( 'posts_per_page', 24 );
 	<div style="height:2rem" aria-hidden="true" class="wp-block-spacer"></div>
 	<!-- /wp:spacer -->
 
-	<!-- wp:query-pagination {"paginationArrow":"chevron","layout":{"type":"flex","justifyContent":"space-between"}} -->
-		<!-- wp:query-pagination-previous /-->
-
-		<!-- wp:query-pagination-numbers /-->
-
-		<!-- wp:query-pagination-next /-->
-	<!-- /wp:query-pagination -->
+	<!-- wp:pattern {"slug":"greg-grandin/pagination"} /-->
 </section>
 <!-- /wp:query -->

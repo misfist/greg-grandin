@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Book archive
- * Slug: greg-grandin/template-archive-book
+ * Slug: greg-grandin/template-front-page
  * Template Types: archive
  * Viewport width: 1400
  * Inserter: no
@@ -12,14 +12,4 @@
  */
 
 ?>
-<!-- wp:group {"tagName":"main","layout":{"type":"constrained"}} -->
-<main class="wp-block-group">
-	<!-- wp:pattern {"slug":"greg-grandin/template-query-loop-book-latest"} /-->
-
-	<!-- wp:group {"align":"wide","layout":{"type":"default"}} -->
-	<div class="wp-block-group alignwide">
-		<!-- wp:pattern {"slug":"greg-grandin/template-query-loop-books"} /-->
-	</div>
-	<!-- /wp:group -->
-</main>
-<!-- /wp:group -->
+<!-- wp:pattern {"slug":"greg-grandin/template-archive-book"} /-->

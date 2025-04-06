@@ -147,15 +147,8 @@
 				</div>
 				<!-- /wp:group -->
 			<!-- /wp:post-template -->
-			<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40"}}},"layout":{"type":"constrained"}} -->
-			<div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40)">
-				<!-- wp:query-pagination {"align":"wide","layout":{"type":"flex","justifyContent":"space-between"}} -->
-					<!-- wp:query-pagination-previous /-->
-					<!-- wp:query-pagination-numbers /-->
-					<!-- wp:query-pagination-next /-->
-				<!-- /wp:query-pagination -->
-			</div>
-			<!-- /wp:group -->
+			 
+			<!-- wp:pattern {"slug":"greg-grandin/pagination"} /-->
 		</div>
 		<!-- /wp:query -->
 	</div>
