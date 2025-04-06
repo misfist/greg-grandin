@@ -28,9 +28,10 @@ $offset = ( is_front_page() ) ? 1 : 0;
 		"inherit": false,
 		"taxQuery": null,
 		"parents": []
-	}
+	},
+	"className": "post-list book-list"
 } -->
-<div class="wp-block-query">
+<div class="wp-block-query post-list book-list">
 	<!-- wp:post-template -->
 	<!-- wp:columns {"style":{"spacing":{"blockGap":{"top":"var:preset|spacing|50","left":"var:preset|spacing|50"},"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50"}},"border":{"top":{"color":"var:preset|color|accent-6","width":"1px"}}}} -->
 	<div class="wp-block-columns" style="border-top-color:var(--wp--preset--color--accent-6);border-top-width:1px;padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)">
