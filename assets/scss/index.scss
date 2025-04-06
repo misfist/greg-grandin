@@ -7,6 +7,11 @@
     font-family: var(--wp--preset--font-family--libre-franklin);
 }
 
+.is-style-italic,
+.has-style-italic {
+	font-style: italic;
+}
+
 .has-text-align-left {
 	text-align: left !important;
 }
@@ -18,4 +23,8 @@
 
 main:has( .book-hero ) {
 	margin-top: 0 !important;
+}
+
+.category-essays-articles article {
+	column-gap: .5rem;
 }

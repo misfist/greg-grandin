@@ -80,6 +80,24 @@ function register_block_bindings() {
 	);
 
 	register_block_bindings_source(
+		'greg-grandin/publication-date-full',
+		array(
+			'label'              => _x( 'Publication Date (Long Format)', 'Label for the block binding placeholder in the editor', 'greg-grandin' ),
+			'get_value_callback' => __NAMESPACE__ . '\publication_date_full_binding',
+			'uses_context'       => array( 'postId' ),
+		)
+	);
+
+	register_block_bindings_source(
+		'greg-grandin/publication',
+		array(
+			'label'              => _x( 'Publication', 'Label for the block binding placeholder in the editor', 'greg-grandin' ),
+			'get_value_callback' => __NAMESPACE__ . '\publication_binding',
+			'uses_context'       => array( 'postId' ),
+		)
+	);
+
+	register_block_bindings_source(
 		'greg-grandin/copyright',
 		array(
 			'label'              => _x( 'Copyright', 'Label for the block binding placeholder in the editor', 'greg-grandin' ),
@@ -163,6 +181,39 @@ function publication_date_binding( array $source_args, $block_instance ): string
 }
 
 /**
+ * Binding for publication_date.
+ *
+ * @return string
+ */
+function publication_date_full_binding( array $source_args, $block_instance ): string {
+	$post_id = $block_instance->context['postId'];
+	if ( isset( $source_args['key'] ) ) {
+		$publication_date = get_post_meta( $post_id, $source_args['key'], true );
+		if ( $publication_date ) {
+			$format = 'F j, Y';
+			return date( $format, strtotime( $publication_date ) );
+		}
+	}
+	return get_the_date();
+}
+
+/**
+ * Binding for publication.
+ *
+ * @return string
+ */
+function publication_binding( array $source_args, $block_instance ): string {
+	$post_id = $block_instance->context['postId'];
+	if ( isset( $source_args['key'] ) ) {
+		$publication = get_post_meta( $post_id, $source_args['key'], true );
+		if ( $publication ) {
+			return sprintf( '<em>%s</em>', sanitize_text_field( $publication ) );
+		}
+	}
+	return '';
+}
+
+/**
  * Binding for copyright info.
  *
  * @return string
@@ -202,7 +253,7 @@ function display_book_buttons() {
  * @param  string $post_type
  * @return array $args
  */
-function register_template( array $args ): array {
+function register_book_template( array $args ): array {
 	$banner = array(
 		'core/group',
 		array(
@@ -618,4 +669,34 @@ function register_template( array $args ): array {
 	// $args['template_lock'] = 'contentOnly';
 	return $args;
 }
-add_action( 'register_book_post_type_args', __NAMESPACE__ . '\register_template' );
+add_action( 'register_book_post_type_args', __NAMESPACE__ . '\register_book_template' );
+
+/**
+ * Register block template for book post type.
+ *
+ * @link https://developer.wordpress.org/reference/hooks/register_post_type_post_type_args/
+ *
+ * @param  array  $args
+ * @param  string $post_type
+ * @return array $args
+ */
+function register_post_template( array $args ): array {
+	$metadata = array(
+		'site-functionality/post-details',
+		array(
+			'className' => 'metadata',
+			'lock'      => array(
+				'move'   => true,
+				'remove' => false,
+			),
+		),
+		array(),
+	);
+
+	$template         = array(
+		$metadata,
+	);
+	$args['template'] = $template;
+	return $args;
+}
+add_action( 'register_post_post_type_args', __NAMESPACE__ . '\register_post_template' );
