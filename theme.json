@@ -453,6 +453,47 @@
 					"fontWeight": "500"
 				}
 			},
+			"core/query-pagination-numbers": {
+				"color": {
+					"text": "wp:preset|color|base",
+					"background": "wp:preset|color|accent-5"
+				},
+				"elements": {
+					"link": {
+						"color": {
+							"text": "wp:preset|color|base"
+						}
+					}
+				}
+			},
+			"core/query-pagination-previous": {
+				"css": "",
+				"color": {
+					"text": "wp:preset|color|base",
+					"background": "wp:preset|color|accent-5"
+				},
+				"elements": {
+					"link": {
+						"color": {
+							"text": "wp:preset|color|base"
+						}
+					}
+				}
+			},
+			"core/query-pagination-next": {
+				"css": "",
+				"color": {
+					"text": "wp:preset|color|base",
+					"background": "wp:preset|color|accent-5"
+				},
+				"elements": {
+					"link": {
+						"color": {
+							"text": "wp:preset|color|base"
+						}
+					}
+				}
+			},
 			"core/quote": {
 				"border": {
 					"color": "currentColor",
