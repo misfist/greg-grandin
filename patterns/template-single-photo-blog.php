@@ -71,8 +71,8 @@
 			<!-- /wp:column -->
 		</div>
 		<!-- /wp:columns -->
-		<!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"top":"var:preset|spacing|50","bottom":"0"}}},"layout":{"type":"default"}} -->
-		<div class="wp-block-group alignwide" style="margin-top:var(--wp--preset--spacing--50);margin-bottom:0">
+		<!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"top":"var:preset|spacing|40","bottom":"0"}}},"layout":{"type":"default"}} -->
+		<div class="wp-block-group alignwide" style="margin-top:var(--wp--preset--spacing--40);margin-bottom:0">
 			<!-- wp:pattern {"slug":"greg-grandin/post-navigation"} /-->
 		</div>
 		<!-- /wp:group -->

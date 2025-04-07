@@ -19,14 +19,14 @@
 		<!-- wp:template-part {"slug":"vertical-header"} /-->
 	</div>
 	<!-- /wp:column -->
-	<!-- wp:column {"width":"90%","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50","right":"0"}}},"layout":{"type":"default"}} -->
-	<div class="wp-block-column" style="padding-top:var(--wp--preset--spacing--50);padding-right:0;padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50);flex-basis:90%">
+	<!-- wp:column {"width":"90%","style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40","right":"0"}}},"layout":{"type":"default"}} -->
+	<div class="wp-block-column" style="padding-top:var(--wp--preset--spacing--40);padding-right:0;padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40);flex-basis:90%">
 		<!-- wp:group {"tagName":"main","layout":{"type":"default"}} -->
 		<main class="wp-block-group">
-			<!-- wp:group {"style":{"spacing":{"padding":{"right":"var:preset|spacing|50","left":"0"}}},"layout":{"type":"default"}} -->
-			<div class="wp-block-group" style="padding-right:var(--wp--preset--spacing--50);padding-left:0">
-				<!-- wp:spacer {"height":"var:preset|spacing|50"} -->
-				<div style="height:var(--wp--preset--spacing--50)" aria-hidden="true" class="wp-block-spacer"></div>
+			<!-- wp:group {"style":{"spacing":{"padding":{"right":"var:preset|spacing|40","left":"0"}}},"layout":{"type":"default"}} -->
+			<div class="wp-block-group" style="padding-right:var(--wp--preset--spacing--40);padding-left:0">
+				<!-- wp:spacer {"height":"var:preset|spacing|40"} -->
+				<div style="height:var(--wp--preset--spacing--40)" aria-hidden="true" class="wp-block-spacer"></div>
 				<!-- /wp:spacer -->
 				<!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"top"}} -->
 				<div class="wp-block-group">
@@ -35,14 +35,14 @@
 					</div>
 				<!-- /wp:group -->
 
-				<!-- wp:spacer {"height":"var:preset|spacing|50"} -->
-				<div style="height:var(--wp--preset--spacing--50)" aria-hidden="true" class="wp-block-spacer"></div>
+				<!-- wp:spacer {"height":"var:preset|spacing|40"} -->
+				<div style="height:var(--wp--preset--spacing--40)" aria-hidden="true" class="wp-block-spacer"></div>
 				<!-- /wp:spacer -->
 			</div>
 			<!-- /wp:group -->
 			<!-- wp:post-featured-image {"aspectRatio":"16/9"} /-->
-			<!-- wp:group {"style":{"spacing":{"padding":{"right":"var:preset|spacing|50"}}},"layout":{"type":"default"}} -->
-			<div class="wp-block-group" style="padding-right:var(--wp--preset--spacing--50)">
+			<!-- wp:group {"style":{"spacing":{"padding":{"right":"var:preset|spacing|40"}}},"layout":{"type":"default"}} -->
+			<div class="wp-block-group" style="padding-right:var(--wp--preset--spacing--40)">
 				<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|20"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
 				<div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--20);padding-bottom:var(--wp--preset--spacing--20)">
 					<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
@@ -55,8 +55,8 @@
 				</div>
 				<!-- /wp:group -->
 
-				<!-- wp:spacer {"height":"var:preset|spacing|50"} -->
-				<div style="height:var(--wp--preset--spacing--50)" aria-hidden="true" class="wp-block-spacer"></div>
+				<!-- wp:spacer {"height":"var:preset|spacing|40"} -->
+				<div style="height:var(--wp--preset--spacing--40)" aria-hidden="true" class="wp-block-spacer"></div>
 				<!-- /wp:spacer -->
 
 				<!-- wp:columns {"style":{"spacing":{"blockGap":{"left":"var:preset|spacing|70"}}}} -->
@@ -74,8 +74,8 @@
 				</div>
 				<!-- /wp:columns -->
 
-				<!-- wp:spacer {"height":"var:preset|spacing|50"} -->
-				<div style="height:var(--wp--preset--spacing--50)" aria-hidden="true" class="wp-block-spacer"></div>
+				<!-- wp:spacer {"height":"var:preset|spacing|40"} -->
+				<div style="height:var(--wp--preset--spacing--40)" aria-hidden="true" class="wp-block-spacer"></div>
 				<!-- /wp:spacer -->
 			</div>
 			<!-- /wp:group -->
