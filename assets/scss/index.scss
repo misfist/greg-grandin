@@ -47,3 +47,48 @@ main:has( .book-hero ) {
 	display: none;
 	margin-top: 0;
 }
+
+.wp-block-query-pagination {
+	&-numbers {
+		display: flex;
+		column-gap: .5rem;
+
+		.page-numbers:not( .dots ) {
+			color: var( --wp--preset--color--base );
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 2rem;
+			width: 2rem;
+			background-color: var(--wp--preset--color--accent-1);
+			border-radius: 50%;
+
+			&:hover,
+			&:focus {
+				background-color: var(--wp--preset--color--contrast);
+			}
+
+			&.current {
+				background-color: var(--wp--preset--color--contrast);
+			}
+		}
+
+		.dots {
+			background-color: transparent;
+			color: var(--wp--preset--color--accent-1);
+		}
+
+	}
+
+	&-next,
+	&-previous {
+		text-transform: uppercase;
+		color: var(--wp--preset--color--accent-1);
+		font-size: var( --wp--preset--font-size--small );
+
+		&:hover,
+		&:focus {
+			color: var(--wp--preset--color--contrast);
+		}
+	}
+}
