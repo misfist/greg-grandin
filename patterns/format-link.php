@@ -2,7 +2,7 @@
 /**
  * Title: Link format
  * Slug: greg-grandin/format-link
- * Categories: greg_grandin_post-format
+ * Categories: post-format
  * Description: A link post format with a description and an emphasized link for key content.
  *
  * @package WordPress
@@ -11,18 +11,74 @@
  */
 
 ?>
-<!-- wp:group {"className":"is-style-section-3","style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group is-style-section-3" style="padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)">
-	<!-- wp:paragraph {"style":{"typography":{"fontStyle":"normal","fontWeight":"700"}}} -->
-	<p style="font-style:normal;font-weight:700"><?php esc_html_e( 'The Stories Book, a fine collection of moments in time featuring photographs from Louis Fleckenstein, Paul Strand and Asahachi Kōno, is available for pre-order', 'greg-grandin' ); ?></p>
+<!-- wp:group {
+	"tagName": "article",
+	"className": "alignfull",
+	"style": {
+		"spacing": {
+			"padding": {
+				"top": "var:preset|spacing|30",
+				"bottom": "var:preset|spacing|30",
+				"left": "0",
+				"right": "0"
+			},
+			"blockGap": "0"
+		},
+		"border": {
+			"bottom": {
+				"color": "var:preset|color|accent-6",
+				"width": "1px"
+			},
+			"top": [],
+			"right": [],
+			"left": []
+		}
+	},
+	"layout": {
+		"type": "flex",
+		"flexWrap": "wrap",
+		"verticalAlignment": "center",
+		"justifyContent": "left"
+	}
+} -->
+<article class="wp-block-group alignfull" style="border-bottom-color:var(--wp--preset--color--accent-6);border-bottom-width:1px;padding-top:var(--wp--preset--spacing--30);padding-right:0;padding-bottom:var(--wp--preset--spacing--30);padding-left:0">
+	<!-- wp:post-title {"level":3,"isLink":true,"fontSize":"medium"} /-->
+
+	<!-- wp:paragraph -->
+	<p>|</p>
 	<!-- /wp:paragraph -->
 
-	<!-- wp:group {"fontSize":"medium","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
-	<div class="wp-block-group has-medium-font-size">
-		<!-- wp:paragraph -->
-		<p><a href="#"><?php esc_html_e( 'https://example.com', 'greg-grandin' ); ?></a></p>
-		<!-- /wp:paragraph -->
-		</div>
-	<!-- /wp:group -->
-</div>
+	<!-- wp:paragraph {
+		"metadata": {
+			"bindings": {
+				"content": {
+					"source": "core/post-meta",
+					"args": {
+						"key": "publisher"
+					}
+				}
+			}
+		},
+		"className": "publication is-style-italic"
+	} -->
+	<p class="publication is-style-italic"></p>
+	<!-- /wp:paragraph -->
+
+	<!-- wp:paragraph -->
+	<p>|</p>
+	<!-- /wp:paragraph -->
+
+	<!-- wp:paragraph {
+		"metadata": {
+			"bindings": {
+				"content": {
+					"source": "greg-grandin/publication-date-full"
+				}
+			}
+		},
+		"className": "publication-date"
+	} -->
+	<p class="publication-date"></p>
+	<!-- /wp:paragraph -->
+</article>
 <!-- /wp:group -->
