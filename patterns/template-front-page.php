@@ -12,4 +12,15 @@
  */
 
 ?>
-<!-- wp:pattern {"slug":"greg-grandin/template-archive-book"} /-->
+<!-- wp:group {"tagName":"main","layout":{"type":"constrained"}} -->
+<main class="wp-block-group">
+
+	<!-- wp:pattern {"slug":"greg-grandin/hero-book-latest"} /-->
+
+	<!-- wp:group {"align":"wide","layout":{"type":"default"}} -->
+	<div class="wp-block-group alignwide">
+		<!-- wp:pattern {"slug":"greg-grandin/query-loop-books"} /-->
+	</div>
+	<!-- /wp:group -->
+</main>
+<!-- /wp:group -->

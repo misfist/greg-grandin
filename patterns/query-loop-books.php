@@ -1,8 +1,8 @@
 <?php
 /**
  * Title: List of books
- * Slug: greg-grandin/template-query-loop-books
- * Categories: query
+ * Slug: greg-grandin/query-loop-books
+ * Categories: query, posts
  * Block Types: core/query
  * Description: A list of books.
  *
@@ -33,29 +33,70 @@ $offset = ( is_front_page() ) ? 1 : 0;
 } -->
 <div class="wp-block-query post-list book-list">
 	<!-- wp:post-template -->
-	<!-- wp:columns {"style":{"spacing":{"blockGap":{"top":"var:preset|spacing|50","left":"var:preset|spacing|50"},"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50"}},"border":{"top":{"color":"var:preset|color|accent-6","width":"1px"}}}} -->
-	<div class="wp-block-columns" style="border-top-color:var(--wp--preset--color--accent-6);border-top-width:1px;padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)">
+		<!-- wp:columns {
+			"style": {
+				"spacing": {
+					"blockGap": {
+						"top": "0",
+						"left": "var:preset|spacing|40"
+					},
+					"padding": {
+						"top": "var:preset|spacing|40",
+						"bottom": "var:preset|spacing|40"
+					},
+					"margin": {
+						"top": "0",
+						"bottom": "0"
+					}
+				},
+				"border": {
+					"bottom": {
+						"color": "var:preset|color|accent-4",
+						"width": "1px"
+					}
+				}
+			}
+		} -->
+		<div class="wp-block-columns" style="border-bottom-color:var(--wp--preset--color--accent-4);border-bottom-width:1px;margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40)">
 
-		<!-- wp:column -->
-		<div class="wp-block-column">
-			<!-- wp:post-title {"isLink":true} /-->
+			<!-- wp:column -->
+			<div class="wp-block-column">
+				<!-- wp:post-title {"isLink":true} /-->
 
-			<!-- wp:pattern {"slug":"greg-grandin/binding-subtitle"} /-->
+				<!-- wp:pattern {"slug":"greg-grandin/binding-subtitle"} /-->
 
-			<!-- wp:post-excerpt {"showMoreOnNewLine":false,"fontSize":"medium"} /-->
+				<!-- wp:post-excerpt {"showMoreOnNewLine":false,"fontSize":"medium"} /-->
+			</div>
+			<!-- /wp:column -->
+
+			<!-- wp:column {"width":"20%"} -->
+			<div class="wp-block-column" style="flex-basis:20%">
+				<!-- wp:post-featured-image {"isLink":true,"aspectRatio":"2/3","style":{"shadow":"var:preset|shadow|natural"}} /-->
+			</div>
+			<!-- /wp:column -->
 		</div>
-		<!-- /wp:column -->
-
-		<!-- wp:column {"width":"20%"} -->
-		<div class="wp-block-column" style="flex-basis:20%">
-			<!-- wp:post-featured-image {"isLink":true,"aspectRatio":"2/3","style":{"shadow":"var:preset|shadow|natural"}} /-->
-		</div>
-		<!-- /wp:column -->
-	</div>
-	<!-- /wp:columns -->
+		<!-- /wp:columns -->
 	<!-- /wp:post-template -->
 
-	<!-- wp:pattern {"slug":"greg-grandin/pagination"} /-->
+	<?php
+	if ( ! is_front_page() ) :
+		?>
+
+		<!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
+		<div class="wp-block-group alignwide">
+			<!-- wp:query-pagination {"paginationArrow":"arrow","align":"wide","layout":{"type":"flex","justifyContent":"space-between"}} -->
+			<!-- wp:query-pagination-previous /-->
+
+			<!-- wp:query-pagination-numbers /-->
+
+			<!-- wp:query-pagination-next /-->
+			<!-- /wp:query-pagination -->
+		</div>
+		<!-- /wp:group -->
+
+		<?php
+		endif;
+	?>
 
 	<!-- wp:query-no-results -->
 		<!-- wp:paragraph -->

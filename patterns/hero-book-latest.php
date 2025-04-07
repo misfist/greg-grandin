@@ -15,8 +15,32 @@
 
 ?>
 
-<!-- wp:group {"metadata":{"categories":["banner"],"name":"Latest Book"},"align":"full","className":"is-style-section-1","style":{"spacing":{"padding":{"top":"var:preset|spacing|80","bottom":"var:preset|spacing|80","left":"var:preset|spacing|50","right":"var:preset|spacing|50"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"default"}} -->
-<div class="wp-block-group alignfull is-style-section-1" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--80);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--80);padding-left:var(--wp--preset--spacing--50)">
+<!-- wp:group {
+	"metadata": {
+		"categories": [
+			"banner"
+		],
+		"name": "Latest Book"
+	},
+	"align": "full",
+	"className": "is-style-section-1 book-hero",
+	"style": {
+		"spacing": {
+			"padding": {
+				"top": "var:preset|spacing|60",
+				"bottom": "var:preset|spacing|60"
+			},
+			"margin": {
+				"top": "0",
+				"bottom": "0"
+			}
+		}
+	},
+	"layout": {
+		"type": "default"
+	}
+} -->
+<div class="wp-block-group alignfull is-style-section-1 book-hero" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
 
 	<!-- wp:query {
 	"queryId": 115,
@@ -43,8 +67,8 @@
 		<div class="wp-block-group alignfull is-style-section-1">
 			<!-- wp:columns {"verticalAlignment":"top","align":"wide"} -->
 			<div class="wp-block-columns alignwide are-vertically-aligned-top">
-				<!-- wp:column {"verticalAlignment":"top","width":"auto"} -->
-				<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:auto">
+				<!-- wp:column {"width":"65%","className":"is-vertically-aligned-top"} -->
+				<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:65%">
 					<!-- wp:group {"style":{"dimensions":{"minHeight":"100%"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"left","flexWrap":"nowrap","verticalAlignment":"top"}} -->
 					<div class="wp-block-group" style="min-height:100%">
 						<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"constrained"}} -->
@@ -167,8 +191,8 @@
 				</div>
 				<!-- /wp:column -->
 
-				<!-- wp:column {"verticalAlignment":"top","width":"45%"} -->
-				<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:45%">
+				<!-- wp:column {"verticalAlignment":"top"} -->
+				<div class="wp-block-column is-vertically-aligned-top">
 					<!-- wp:post-featured-image {
 						"isLink": true,
 						"aspectRatio": "2/3",

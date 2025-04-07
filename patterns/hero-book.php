@@ -14,19 +14,62 @@
 use function Greg_Grandin\display_book_buttons;
 ?>
 
-<!-- wp:group {"metadata":{"categories":["banner"],"name":"About the Book"},"align":"full","className":"is-style-section-1 book-hero","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50","right":"var:preset|spacing|50"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"default"}} -->
-<div class="wp-block-group alignfull is-style-section-1 book-hero" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50)">
+<!-- wp:group {
+	"metadata": {
+		"categories": [
+			"banner"
+		],
+		"name": "About the Book"
+	},
+	"align": "full",
+	"className": "is-style-section-1 book-hero",
+	"style": {
+		"spacing": {
+			"padding": {
+				"top": "var:preset|spacing|60",
+				"bottom": "var:preset|spacing|60"
+			},
+			"margin": {
+				"top": "0",
+				"bottom": "0"
+			}
+		}
+	},
+	"layout": {
+		"type": "default"
+	}
+} -->
+<div class="wp-block-group alignfull is-style-section-1 book-hero" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
 	<!-- wp:group {"align":"full","className":"is-style-section-1","layout":{"type":"constrained"}} -->
 	<div class="wp-block-group alignfull is-style-section-1">
 		<!-- wp:columns {"verticalAlignment":"top","align":"wide"} -->
 		<div class="wp-block-columns alignwide are-vertically-aligned-top">
-			<!-- wp:column {"verticalAlignment":"top","width":"auto"} -->
-			<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:auto">
+			<!-- wp:column {"width":"65%","className":"is-vertically-aligned-top"} -->
+			<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:65%">
 				<!-- wp:group {"style":{"dimensions":{"minHeight":"100%"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"left","flexWrap":"nowrap","verticalAlignment":"top"}} -->
 				<div class="wp-block-group" style="min-height:100%">
 					<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"constrained"}} -->
 					<div class="wp-block-group">
-						<!-- wp:heading {"metadata":{"name":"Heading","bindings":{"__default":{"source":"core/pattern-overrides"}}},"align":"wide","style":{"typography":{"textTransform":"uppercase","fontStyle":"normal","fontWeight":"700","letterSpacing":"1.4px"}},"fontSize":"small"} -->
+						<!-- wp:heading {
+							"metadata": {
+								"name": "Heading",
+								"bindings": {
+									"__default": {
+										"source": "core/pattern-overrides"
+									}
+								}
+							},
+							"align": "wide",
+							"style": {
+								"typography": {
+									"textTransform": "uppercase",
+									"fontStyle": "normal",
+									"fontWeight": "700",
+									"letterSpacing": "1.4px"
+								}
+							},
+							"fontSize": "small"
+						} -->
 						<h2 class="wp-block-heading alignwide has-small-font-size" style="font-style:normal;font-weight:700;letter-spacing:1.4px;text-transform:uppercase"><?php echo esc_html_x( 'About the Book', 'Hero - Book pattern headline text', 'greg-grandin' ); ?></h2>
 						<!-- /wp:heading -->
 
@@ -141,8 +184,8 @@ use function Greg_Grandin\display_book_buttons;
 			</div>
 			<!-- /wp:column -->
 
-			<!-- wp:column {"verticalAlignment":"top","width":"45%"} -->
-			<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:45%">
+			<!-- wp:column {"verticalAlignment":"top"} -->
+			<div class="wp-block-column is-vertically-aligned-top">
 				<!-- wp:post-featured-image {
 				"isLink": true,
 				"aspectRatio": "2/3",
