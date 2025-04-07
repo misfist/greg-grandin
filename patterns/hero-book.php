@@ -1,51 +1,164 @@
 <?php
 /**
- * Title: Hero, Book
+ * Title: Hero - Book
  * Slug: greg-grandin/hero-book
- * Categories: banner
- * Keywords: hero, book
- * Description: A hero with an overlapped book cover and links.
+ * Categories: banner, media
+ * Description: Banner section for single book.
+ * Post Types: book
+ * Block Types: core/content
  *
  * @package WordPress
  * @subpackage Greg_Grandin
  * @since Greg Grandin 1.0
  */
-
+use function Greg_Grandin\display_book_buttons;
 ?>
 
-<!-- wp:group {"metadata":{"categories":["banner"],"name":"About the Book"},"align":"full","className":"is-style-section-1","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50","right":"var:preset|spacing|50"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"default"}} -->
-<div class="wp-block-group alignfull is-style-section-1" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50)">
+<!-- wp:group {
+	"metadata": {
+		"categories": [
+			"banner"
+		],
+		"name": "About the Book"
+	},
+	"align": "full",
+	"className": "is-style-section-1 book-hero",
+	"style": {
+		"spacing": {
+			"padding": {
+				"top": "var:preset|spacing|60",
+				"bottom": "var:preset|spacing|60"
+			},
+			"margin": {
+				"top": "0",
+				"bottom": "0"
+			}
+		}
+	},
+	"layout": {
+		"type": "default"
+	}
+} -->
+<div class="wp-block-group alignfull is-style-section-1 book-hero" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
 	<!-- wp:group {"align":"full","className":"is-style-section-1","layout":{"type":"constrained"}} -->
 	<div class="wp-block-group alignfull is-style-section-1">
 		<!-- wp:columns {"verticalAlignment":"top","align":"wide"} -->
 		<div class="wp-block-columns alignwide are-vertically-aligned-top">
-			<!-- wp:column {"verticalAlignment":"top","width":"55%"} -->
-			<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:55%">
+			<!-- wp:column {"width":"65%","className":"is-vertically-aligned-top"} -->
+			<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:65%">
 				<!-- wp:group {"style":{"dimensions":{"minHeight":"100%"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"left","flexWrap":"nowrap","verticalAlignment":"top"}} -->
 				<div class="wp-block-group" style="min-height:100%">
 					<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"constrained"}} -->
 					<div class="wp-block-group">
-						<!-- wp:heading {"metadata":{"name":"Heading","bindings":{"__default":{"source":"core/pattern-overrides"}}},"align":"wide","style":{"typography":{"textTransform":"uppercase","fontStyle":"normal","fontWeight":"700","letterSpacing":"1.4px"}},"fontSize":"small"} -->
+						<!-- wp:heading {
+							"metadata": {
+								"name": "Heading",
+								"bindings": {
+									"__default": {
+										"source": "core/pattern-overrides"
+									}
+								}
+							},
+							"align": "wide",
+							"style": {
+								"typography": {
+									"textTransform": "uppercase",
+									"fontStyle": "normal",
+									"fontWeight": "700",
+									"letterSpacing": "1.4px"
+								}
+							},
+							"fontSize": "small"
+						} -->
 						<h2 class="wp-block-heading alignwide has-small-font-size" style="font-style:normal;font-weight:700;letter-spacing:1.4px;text-transform:uppercase"><?php echo esc_html_x( 'About the Book', 'Hero - Book pattern headline text', 'greg-grandin' ); ?></h2>
 						<!-- /wp:heading -->
 
-						<!-- wp:heading {"level":1,"className":"wp-block-post-title","metadata":{"name":"Title","bindings":{"__default":{"source":"core/pattern-overrides"}}},"fontSize":"xx-large"} -->
-						<h1 class="wp-block-heading wp-block-post-title"><?php echo esc_html_x( 'Book Title', 'Hero - Book pattern title', 'greg-grandin' ); ?></h1>
+						<!-- wp:post-title {"isLink":false,"fontSize":"xx-large"} /-->
+
+						<!-- wp:heading {
+							"metadata": {
+								"bindings": {
+									"content": {
+										"source": "core/post-meta",
+										"args": {
+											"key": "subtitle"
+										}
+									}
+								}
+							},
+							"className": "wp-block-post-title is-style-subtitle"
+						} -->
+						<h2 class="wp-block-heading wp-block-post-title is-style-subtitle"></h2>
 						<!-- /wp:heading -->
 
-						<!-- wp:heading {"level":3,"metadata":{"bindings":{"name":"Subtitle","content":{"source":"core/pattern-overrides"}}},"className":"is-style-subtitle is-style-text-subtitle","style":{"typography":{"textTransform":"none"}}} -->
-						<h3 class="wp-block-heading is-style-subtitle is-style-text-subtitle" style="text-transform:none"><?php esc_html_e( 'Subtitle', 'greg-grandin' ); ?></h3>
-						<!-- /wp:heading -->
-
-						<!-- wp:paragraph {"className":"wp-block-post-excerpt","metadata":{"bindings":{"name":"Excerpt","content":{"source":"core/pattern-overrides"}}}} -->
-						<p class="wp-block-post-excerpt"><?php esc_html_e( 'Excerpt Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eros ipsum, luctus vel porttitor at, ultrices nec lorem. Nam dapibus commodo fringilla. Duis egestas augue consectetur mi cursus malesuada. Proin id placerat dui. ', 'greg-grandin' ); ?></p>
+						<!-- wp:paragraph {
+							"metadata": {
+								"bindings": {
+									"content": {
+										"source": "core/post-meta",
+										"args": {
+											"key": "blurb"
+										}
+									}
+								}
+							},
+							"className": "book-blurb has-text-align-left is-style-text-emphasis"
+						} -->
+						<p class="book-blurb has-text-align-left is-style-text-emphasis"></p>
 						<!-- /wp:paragraph -->
+
+						<!-- wp:post-featured-image {
+							"isLink": true,
+							"aspectRatio": "2/3",
+							"metadata": {
+								"name": "Featured Image - Mobile"
+							},
+							"style": {
+								"shadow": "var:preset|shadow|natural"
+							},
+							"blockVisibility": {
+								"controlSets": [
+									{
+										"id": 1,
+										"enable": true,
+										"controls": {
+											"screenSize": {
+												"hideOnScreenSize": {
+													"medium": true,
+													"large": true,
+													"extraLarge": true
+												}
+											}
+										}
+									}
+								]
+							}
+						} /-->
+
+						<!-- wp:post-excerpt {
+							"controlSets": [
+								{
+									"id": 1,
+									"enable": true,
+									"controls": {
+										"screenSize": {
+											"hideOnScreenSize": {
+												"medium": true,
+												"small": true
+											}
+										}
+									}
+								}
+							]
+						} /-->
 					</div>
 					<!-- /wp:group -->
 
 					<!-- wp:group {"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
 					<div class="wp-block-group">
 						<!-- wp:pattern {"slug":"greg-grandin/element-spacer"} /-->
+
+						<?php display_book_buttons(); ?>
 
 						<!-- wp:site-functionality/buy-buttons -->
 						<div class="wp-block-site-functionality-buy-buttons">
@@ -71,26 +184,34 @@
 			</div>
 			<!-- /wp:column -->
 
-			<!-- wp:column {"verticalAlignment":"top","width":"45%"} -->
-			<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:45%">
-				<!-- wp:image {"aspectRatio":"2/3","scale":"cover","sizeSlug":"full","linkDestination":"#"} -->
-				<figure class="wp-block-image size-full">
-					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/book-image.webp" alt="<?php echo esc_attr__( 'Book Image', 'greg-grandin' ); ?>" style="aspect-ratio:2/3;object-fit:cover"/>
-				</figure>
-				<!-- /wp:image -->
-
-				<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center"}} -->
-				<div class="wp-block-group">
-					<!-- wp:paragraph {"className":"publisher","style":{"elements":{"link":{"color":{"text":"var:preset|color|accent-4"}}}},"textColor":"accent-4","fontSize":"small"} -->
-					<p class="publisher"><?php esc_html_e( 'Publisher', 'greg-grandin' ); ?></p>
-					<!-- /wp:paragraph -->
-
-					<!-- wp:paragraph {"className":"publication-date","style":{"elements":{"link":{"color":{"text":"var:preset|color|accent-4"}}}},"textColor":"accent-4","fontSize":"small"} -->
-					<p class="publication-date""><?php esc_html_e( 'Publication Date', 'greg-grandin' ); ?></p>
-					<!-- /wp:paragraph -->
-
-				</div>
-				<!-- /wp:group -->
+			<!-- wp:column {"verticalAlignment":"top"} -->
+			<div class="wp-block-column is-vertically-aligned-top">
+				<!-- wp:post-featured-image {
+				"isLink": true,
+				"aspectRatio": "2/3",
+				"metadata": {
+					"name": "Featured Image - Desktop"
+				},
+				"style": {
+					"shadow": "var:preset|shadow|natural"
+				},
+				"blockVisibility": {
+					"controlSets": [
+						{
+							"id": 1,
+							"enable": true,
+							"controls": {
+								"screenSize": {
+									"hideOnScreenSize": {
+										"small": true,
+										"extraSmall": true
+									}
+								}
+							}
+						}
+					]
+				}
+			} /-->
 			</div>
 			<!-- /wp:column -->
 		</div>
@@ -100,4 +221,3 @@
 
 </div>
 <!-- /wp:group -->
-

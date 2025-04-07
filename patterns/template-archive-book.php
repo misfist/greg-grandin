@@ -12,16 +12,12 @@
  */
 
 ?>
-<!-- wp:group {"tagName":"main","layout":{"type":"constrained"}} -->
-<main class="wp-block-group">
-
-	<?php if ( is_front_page() ) : ?>
-	<!-- wp:pattern {"slug":"greg-grandin/template-query-loop-book-latest"} /-->
-	<?php endif; ?>
-
-	<!-- wp:group {"align":"wide","layout":{"type":"default"}} -->
-	<div class="wp-block-group alignwide">
-		<!-- wp:pattern {"slug":"greg-grandin/template-query-loop-books"} /-->
+<!-- wp:group {"tagName":"main","style":{"spacing":{"margin":{"top":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
+<main class="wp-block-group" style="margin-top:var(--wp--preset--spacing--60)">
+	<!-- wp:group {"layout":{"type":"default"}} -->
+	<div class="wp-block-group">
+		<!-- wp:query-title {"type":"archive","showPrefix":false} /-->
+		<!-- wp:pattern {"slug":"greg-grandin/query-loop-books"} /-->
 	</div>
 	<!-- /wp:group -->
 </main>

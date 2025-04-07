@@ -22,8 +22,8 @@
 		<!-- wp:pattern {"slug":"greg-grandin/hidden-search"} /-->
 	</div>
 	<!-- /wp:group -->
-	<!-- wp:spacer {"height":"var:preset|spacing|50"} -->
-	<div style="height:var(--wp--preset--spacing--50)" aria-hidden="true" class="wp-block-spacer"></div>
+	<!-- wp:spacer {"height":"var:preset|spacing|40"} -->
+	<div style="height:var(--wp--preset--spacing--40)" aria-hidden="true" class="wp-block-spacer"></div>
 	<!-- /wp:spacer -->
 	<!-- wp:pattern {"slug":"greg-grandin/template-query-loop-text-blog"} /-->
 </main>

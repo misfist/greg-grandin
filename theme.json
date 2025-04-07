@@ -330,7 +330,7 @@
 			},
 			"core/columns": {
 				"spacing": {
-					"blockGap": "var(--wp--preset--spacing--50)"
+					"blockGap": "var(--wp--preset--spacing--40)"
 				}
 			},
 			"core/list": {
@@ -698,8 +698,8 @@
 		"spacing": {
 			"blockGap": "1.2rem",
 			"padding": {
-				"left": "var(--wp--preset--spacing--50)",
-				"right": "var(--wp--preset--spacing--50)"
+				"left": "var(--wp--preset--spacing--40)",
+				"right": "var(--wp--preset--spacing--40)"
 			}
 		},
 		"typography": {

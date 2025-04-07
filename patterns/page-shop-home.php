@@ -2,7 +2,7 @@
 /**
  * Title: Shop homepage
  * Slug: greg-grandin/page-shop-home
- * Categories: greg_grandin_page
+ * Categories: page
  * Keywords: starter
  * Block Types: core/post-content
  * Post Types: page, wp_template

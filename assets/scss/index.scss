@@ -34,3 +34,11 @@ main:has( .book-hero ) {
 	margin-right: auto;
 	margin-left: auto;
 }
+
+.book-list .wp-block-post {
+	&:last-child {
+		.wp-block-columns {
+			border-bottom: none !important;
+		}
+	}
+}

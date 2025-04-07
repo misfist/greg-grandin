@@ -12,7 +12,7 @@
 ?>
 <!-- wp:group {"style":{"spacing":{"padding":{"right":"0","left":"0"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="padding-right:0;padding-left:0">
-	<!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|50","left":"var:preset|spacing|50"}}}} -->
+	<!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|40","left":"var:preset|spacing|40"}}}} -->
 	<div class="wp-block-columns alignwide">
 		<!-- wp:column -->
 		<div class="wp-block-column">

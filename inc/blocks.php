@@ -263,10 +263,10 @@ function register_book_template( array $args ): array {
 			'style'     => array(
 				'spacing' => array(
 					'padding' => array(
-						'top'    => 'var:preset|spacing|50',
-						'right'  => 'var:preset|spacing|50',
-						'bottom' => 'var:preset|spacing|50',
-						'left'   => 'var:preset|spacing|50',
+						'top'    => 'var:preset|spacing|40',
+						'right'  => 'var:preset|spacing|40',
+						'bottom' => 'var:preset|spacing|40',
+						'left'   => 'var:preset|spacing|40',
 					),
 					'margin'  => array(
 						'top'    => '0',
