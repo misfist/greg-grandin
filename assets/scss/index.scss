@@ -42,3 +42,8 @@ main:has( .book-hero ) {
 		}
 	}
 }
+
+.wp-block-post-excerpt:has( .wp-block-post-excerpt__excerpt:empty ) {
+	display: none;
+	margin-top: 0;
+}
