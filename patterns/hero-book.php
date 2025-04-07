@@ -48,8 +48,21 @@ use function Greg_Grandin\display_book_buttons;
 			<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:65%">
 				<!-- wp:group {"style":{"dimensions":{"minHeight":"100%"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"left","flexWrap":"nowrap","verticalAlignment":"top"}} -->
 				<div class="wp-block-group" style="min-height:100%">
-					<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"constrained"}} -->
-					<div class="wp-block-group">
+					<!-- wp:group {
+							"style": {
+								"spacing": {
+									"blockGap": "var:preset|spacing|30",
+									"margin": {
+										"right": "auto",
+										"left": "auto"
+									}
+								}
+							},
+							"layout": {
+								"type": "constrained"
+							}
+						} -->
+						<div class="wp-block-group" style="margin-right:auto;margin-left:auto">
 						<!-- wp:heading {
 							"metadata": {
 								"name": "Heading",
