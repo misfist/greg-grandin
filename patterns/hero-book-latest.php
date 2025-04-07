@@ -74,18 +74,15 @@
 						<!-- wp:group {
 							"style": {
 								"spacing": {
-									"blockGap": "var:preset|spacing|30",
-									"margin": {
-										"right": "auto",
-										"left": "auto"
-									}
+									"blockGap": "var:preset|spacing|30"
 								}
 							},
 							"layout": {
 								"type": "constrained"
-							}
+							},
+							"className": "is-style-mobile-center"
 						} -->
-						<div class="wp-block-group" style="margin-right:auto;margin-left:auto">
+						<div class="wp-block-group is-style-mobile-center">
 							<!-- wp:heading {
 								"metadata": {
 									"name": "Heading",
