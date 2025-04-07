@@ -41,7 +41,6 @@ $offset = ( is_front_page() ) ? 1 : 0;
 						"left": "var:preset|spacing|40"
 					},
 					"padding": {
-						"top": "var:preset|spacing|40",
 						"bottom": "var:preset|spacing|40"
 					},
 					"margin": {
@@ -57,15 +56,23 @@ $offset = ( is_front_page() ) ? 1 : 0;
 				}
 			}
 		} -->
-		<div class="wp-block-columns" style="border-bottom-color:var(--wp--preset--color--accent-4);border-bottom-width:1px;margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40)">
+		<div class="wp-block-columns" style="border-bottom-color:var(--wp--preset--color--accent-4);border-bottom-width:1px;margin-top:0;margin-bottom:0;padding-bottom:var(--wp--preset--spacing--40)">
 
-			<!-- wp:column -->
-			<div class="wp-block-column">
+			<!-- wp:column {
+				"style": {
+					"spacing": {
+						"padding": {
+							"bottom": "var:preset|spacing|40"
+						}
+					}
+				}
+			} -->
+			<div class="wp-block-column" style="padding-bottom:var(--wp--preset--spacing--40)">
 				<!-- wp:post-title {"isLink":true} /-->
 
 				<!-- wp:pattern {"slug":"greg-grandin/binding-subtitle"} /-->
 
-				<!-- wp:post-excerpt {"showMoreOnNewLine":false,"fontSize":"medium"} /-->
+				<!-- wp:post-excerpt {"fontSize":"medium"} /-->
 			</div>
 			<!-- /wp:column -->
 
