@@ -22,12 +22,7 @@
 	</div>
 	<!-- /wp:group -->
 	<!-- wp:post-template {"align":"full","style":{"spacing":{"blockGap":"0"}},"layout":{"type":"default"}} -->
-		<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|30"}},"border":{"bottom":{"color":"var:preset|color|accent-6","width":"1px"},"top":{},"right":{},"left":{}}},"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center","justifyContent":"space-between"}} -->
-		<div class="wp-block-group alignfull" style="border-bottom-color:var(--wp--preset--color--accent-6);border-bottom-width:1px;padding-top:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30)">
-			<!-- wp:post-title {"isLink":true,"fontSize":"large"} /-->
-			<!-- wp:post-date {"textAlign":"right","isLink":true,"fontSize":"small"} /-->
-		</div>
-		<!-- /wp:group -->
+		<!-- wp:pattern {"slug":"greg-grandin/format-link"} /-->
 	<!-- /wp:post-template -->
 
 	<!-- wp:spacer {"height":"var:preset|spacing|30"} -->
