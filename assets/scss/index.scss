@@ -43,6 +43,32 @@ main:has( .book-hero ) {
 	}
 }
 
+.essays-articles,
+.search.post-list {
+	article {
+		display: block;
+
+		* {
+			display: inline;
+			
+			&:empty {
+				display: none;
+			}
+		}
+
+		p:not( .separator, .publication ) {
+			&::before {
+				content: '- ';
+				padding-right: .25rem;
+			}
+		}
+
+		a {
+			display: inline;
+		}
+	}
+}
+
 .wp-block-post-excerpt:has( .wp-block-post-excerpt__excerpt:empty ) {
 	display: none;
 	margin-top: 0;

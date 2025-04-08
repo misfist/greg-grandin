@@ -44,8 +44,10 @@
 <article class="wp-block-group alignfull" style="border-bottom-color:var(--wp--preset--color--accent-6);border-bottom-width:1px;padding-top:var(--wp--preset--spacing--30);padding-right:0;padding-bottom:var(--wp--preset--spacing--30);padding-left:0">
 	<!-- wp:post-title {"level":3,"isLink":true,"fontSize":"medium"} /-->
 
-	<!-- wp:paragraph -->
-	<p>|</p>
+	<!-- wp:paragraph {
+		"className": "separator"
+	} -->
+	<p class="separator">|</p>
 	<!-- /wp:paragraph -->
 
 	<!-- wp:paragraph {
@@ -64,21 +66,34 @@
 	<p class="publication is-style-italic"></p>
 	<!-- /wp:paragraph -->
 
-	<!-- wp:paragraph -->
-	<p>|</p>
-	<!-- /wp:paragraph -->
-
-	<!-- wp:paragraph {
-		"metadata": {
-			"bindings": {
-				"content": {
-					"source": "greg-grandin/publication-date-full"
+		<!-- wp:paragraph {
+			"metadata": {
+				"bindings": {
+					"content": {
+						"source": "greg-grandin/publication-date-full"
+					}
 				}
-			}
-		},
-		"className": "publication-date"
-	} -->
-	<p class="publication-date"></p>
-	<!-- /wp:paragraph -->
+			},
+			"className": "publication-date"
+		} -->
+		<p class="publication-date"></p>
+		<!-- /wp:paragraph -->
+
+		<!-- wp:paragraph {
+			"metadata": {
+				"bindings": {
+					"content": {
+						"source": "core/post-meta",
+						"args": {
+							"key": "blurb"
+						}
+					}
+				}
+			},
+			"className": "blurb"
+		} -->
+		<p class="blurb"></p>
+		<!-- /wp:paragraph -->
+
 </article>
 <!-- /wp:group -->
