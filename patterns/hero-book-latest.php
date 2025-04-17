@@ -133,11 +133,11 @@
 										}
 									}
 								},
-								"className": "book-blurb has-text-align-left is-style-text-emphasis"
+								"className": "book-blurb has-text-align-left is-style-mobile-center is-style-text-emphasis"
 							} -->
-							<p class="book-blurb has-text-align-left is-style-text-emphasis"></p>
+							<p class="book-blurb has-text-align-left is-style-mobile-center is-style-text-emphasis"></p>
 							<!-- /wp:paragraph -->
-
+							 
 							<!-- wp:post-featured-image {
 								"isLink": true,
 								"aspectRatio": "2/3",
@@ -165,6 +165,37 @@
 									]
 								}
 							} /-->
+							<!-- wp:paragraph {
+							 "blockVisibility": {
+									"controlSets": [
+										{
+											"id": 1,
+											"enable": true,
+											"controls": {
+												"screenSize": {
+													"hideOnScreenSize": {
+														"small": true,
+														"medium": true
+													}
+												}
+											}
+										}
+									]
+								},
+								"metadata": {
+									"bindings": {
+										"content": {
+											"source": "core/post-meta",
+											"args": {
+												"key": "awards"
+											}
+										}
+									}
+								},
+								"className": "book-awards has-text-align-left is-style-mobile-center is-style-text-emphasis"
+							} -->
+							<p class="book-awards has-text-align-left is-style-mobile-center is-style-text-emphasis"></p>
+							<!-- /wp:paragraph -->
 
 							<!-- wp:post-excerpt {
 								"blockVisibility": {
@@ -184,6 +215,9 @@
 									]
 								}
 							} /-->
+
+
+
 						</div>
 						<!-- /wp:group -->
 

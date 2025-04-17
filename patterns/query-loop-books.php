@@ -73,6 +73,8 @@ $offset = ( is_front_page() ) ? 1 : 0;
 				<!-- wp:pattern {"slug":"greg-grandin/binding-subtitle"} /-->
 
 				<!-- wp:post-excerpt {"fontSize":"medium"} /-->
+
+				<!-- wp:site-functionality/quotes {"number":1} /-->
 			</div>
 			<!-- /wp:column -->
 
