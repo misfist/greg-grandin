@@ -36,24 +36,18 @@ function render_subtitle() {
 	}
 }
 
-/**
- * Display blockquote from post
- *
- * @link https://www.billerickson.net/access-gutenberg-block-data/
- */
-
  /**
  * Get book quotes
  *
- * @return void
+ * @return string
  */
-function get_blockquotes( $post_id = null ) {
+function get_blockquotes( $post_id = null ) : ?string {
 	global $post;
 	$post_id = ( $post_id ) ? $post_id : $post->ID;
 	$block_name = 'core/quote';
 
 	if( ! has_block( $block_name, $post_id ) ) {
-		return;
+		return null;
 	}
 	
 	$blocks = parse_blocks( $post->post_content );
@@ -74,7 +68,6 @@ function get_blockquotes( $post_id = null ) {
 	}
 	return $output;
 }
-
 
 /**
  * Display book quotes
