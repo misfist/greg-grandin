@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Book
- * Slug: greg-grandin/template-book
+ * Slug: greg-grandin/template-single
  * Template Types: single
  * Viewport width: 1400
  * Inserter: no
@@ -12,40 +12,24 @@
  */
 ?>
 
+
 <!-- wp:group {"tagName":"main","style":{"spacing":{"margin":{"top":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
 <main class="wp-block-group" style="margin-top:var(--wp--preset--spacing--60)">
-	<!-- wp:pattern {"slug":"greg-grandin/hero-book"} /-->
-
 	<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
 	<div class="wp-block-group alignfull" style="padding-bottom:var(--wp--preset--spacing--60)">
-
-		<!-- wp:heading {
-			"textAlign": "center",
-			"level": 3,
-			"metadata": {
-				"bindings": {
-					"content": {
-						"source": "core/post-meta",
-						"args": {
-							"key": "awards"
-						}
-					}
-				}
-			},
-			"className": "is-style-text-emphasis"
-		} -->
-		<h3 class="wp-block-heading has-text-align-center is-style-text-emphasis"></h3>
-		<!-- /wp:heading -->
-		
+		<!-- wp:post-title {"level":1} /-->
+		<!-- wp:post-featured-image {"aspectRatio":"16/9","align":"full"} /-->
+		<!-- wp:pattern {"slug":"greg-grandin/hidden-written-by"} /-->
 		<!-- wp:post-content {"align":"full","layout":{"type":"constrained"}} /-->
-
-		<!-- wp:pattern {"slug":"greg-grandin/book-details"} /-->
+		<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
+		<div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
+			<!-- wp:post-terms {"term":"post_tag","separator":"  ","className":"is-style-post-terms-1"} /-->
+		</div>
+		<!-- /wp:group -->
 		
+		<!-- wp:pattern {"slug":"greg-grandin/post-navigation"} /-->
 	</div>
 	<!-- /wp:group -->
-
-	<!-- wp:pattern {"slug":"greg-grandin/post-navigation"} /-->
-
-	<!-- wp:pattern {"slug":"greg-grandin/more-books"} /-->
+	<!-- wp:pattern {"slug":"greg-grandin/more-posts"} /-->
 </main>
 <!-- /wp:group -->

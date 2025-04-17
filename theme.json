@@ -32,44 +32,50 @@
 			"palette": [
 				{
 					"color": "#FFFFFF",
-					"name": "Base",
+					"name": "White",
 					"slug": "base"
 				},
 				{
 					"color": "#111111",
-					"name": "Contrast",
+					"name": "Black",
 					"slug": "contrast"
 				},
 				{
 					"color": "#ba181b",
-					"name": "Accent 1",
+					"name": "Red",
 					"slug": "accent-1"
 				},
 				{
 					"color": "#660708",
-					"name": "Accent 2",
+					"name": "Darker Red",
 					"slug": "accent-2"
 				},
 				{
 					"color": "#a4161a",
-					"name": "Accent 3",
+					"name": "Lighter Red",
 					"slug": "accent-3"
 				},
 				{
 					"color": "#969696",
-					"name": "Accent 4",
+					"name": "Gray",
 					"slug": "accent-4"
 				},
 				{
 					"color": "#FBFAF3",
-					"name": "Accent 5",
+					"name": "Background Color",
 					"slug": "accent-5"
 				},
 				{
 					"color": "color-mix(in srgb, currentColor 20%, transparent)",
 					"name": "Accent 6",
 					"slug": "accent-6"
+				},
+				{
+					"color": "#888888",
+					"name": "Muted Text",
+					"slug": "accent-7"
 				}
+
 			]
 		},
 		"layout": {
@@ -282,6 +288,7 @@
 					"textTransform": "none"
 				}
 			},
+			"site-functionality/quotes": {},
 			"core/button": {
 				"border": {
 					"radius": "0px"
@@ -588,6 +595,15 @@
 			"core/heading": {
 				"typography": {
 					"fontWeight": "700"
+				}
+			},
+			"core/paragraph": {
+				"variations": {
+					"is-style-book-meta": {
+						"typography": {
+							"fontSize": "var:preset|font-size|small"
+						}
+					}
 				}
 			}
 		},
