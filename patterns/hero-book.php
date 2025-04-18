@@ -170,22 +170,6 @@ use function Greg_Grandin\display_book_buttons;
 
 						<?php display_book_buttons(); ?>
 
-						<!-- wp:site-functionality/buy-buttons -->
-						<div class="wp-block-site-functionality-buy-buttons">
-							<!-- wp:buttons {"className":"buy-buttons","layout":{"type":"flex","justifyContent":"center","flexWrap":"wrap","orientation":"horizontal"}} -->
-							<div class="wp-block-buttons buy-buttons">
-								<!-- wp:button -->
-								<div class="wp-block-button"><a class="wp-block-button__link wp-element-button"></a></div>
-								<!-- /wp:button -->
-
-								<!-- wp:button -->
-								<div class="wp-block-button"><a class="wp-block-button__link wp-element-button"></a></div>
-								<!-- /wp:button -->
-							</div>
-							<!-- /wp:buttons -->
-						</div>
-						<!-- /wp:site-functionality/buy-buttons -->
-
 						<!-- wp:pattern {"slug":"greg-grandin/element-spacer"} /-->
 					</div>
 					<!-- /wp:group -->
@@ -194,18 +178,9 @@ use function Greg_Grandin\display_book_buttons;
 			</div>
 			<!-- /wp:column -->
 
-			<!-- wp:column {"verticalAlignment":"top"} -->
-			<div class="wp-block-column is-vertically-aligned-top">
-				<!-- wp:post-featured-image {
-				"isLink": true,
-				"aspectRatio": "2/3",
-				"metadata": {
-					"name": "Featured Image - Desktop"
-				},
-				"style": {
-					"shadow": "var:preset|shadow|natural"
-				},
-				"blockVisibility": {
+			<!-- wp:column {
+				"verticalAlignment":"top",
+			 	"blockVisibility": {
 					"controlSets": [
 						{
 							"id": 1,
@@ -221,7 +196,35 @@ use function Greg_Grandin\display_book_buttons;
 						}
 					]
 				}
-			} /-->
+			 } -->
+			<div class="wp-block-column is-vertically-aligned-top">
+				<!-- wp:post-featured-image {
+					"isLink": true,
+					"aspectRatio": "2/3",
+					"metadata": {
+						"name": "Featured Image - Desktop"
+					},
+					"style": {
+						"shadow": "var:preset|shadow|natural"
+					},
+					"blockVisibility": {
+						"controlSets": [
+							{
+								"id": 1,
+								"enable": true,
+								"controls": {
+									"screenSize": {
+										"hideOnScreenSize": {
+											"small": true,
+											"extraSmall": true
+										}
+									}
+								}
+							}
+						]
+					}
+				} /-->
+
 			</div>
 			<!-- /wp:column -->
 		</div>

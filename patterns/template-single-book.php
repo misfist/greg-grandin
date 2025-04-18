@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Book
- * Slug: greg-grandin/template-book
+ * Slug: greg-grandin/template-single-book
  * Template Types: single
  * Viewport width: 1400
  * Inserter: no
@@ -43,8 +43,6 @@
 		
 	</div>
 	<!-- /wp:group -->
-
-	<!-- wp:pattern {"slug":"greg-grandin/post-navigation"} /-->
 
 	<!-- wp:pattern {"slug":"greg-grandin/more-books"} /-->
 </main>

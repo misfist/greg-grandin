@@ -12,7 +12,7 @@
  * @subpackage Greg_Grandin
  * @since Greg Grandin 1.0
  */
-
+use function Greg_Grandin\display_book_buttons;
 ?>
 
 <!-- wp:group {
@@ -67,6 +67,7 @@
 		<div class="wp-block-group alignfull is-style-section-1">
 			<!-- wp:columns {"verticalAlignment":"top","align":"wide"} -->
 			<div class="wp-block-columns alignwide are-vertically-aligned-top">
+
 				<!-- wp:column {"width":"65%","className":"is-vertically-aligned-top"} -->
 				<div class="wp-block-column is-vertically-aligned-top" style="flex-basis:65%">
 					<!-- wp:group {"style":{"dimensions":{"minHeight":"100%"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"left","flexWrap":"nowrap","verticalAlignment":"top"}} -->
@@ -104,17 +105,7 @@
 								"fontSize": "small"
 							} -->
 							<h2 class="wp-block-heading alignwide has-small-font-size" style="font-style:normal;font-weight:700;letter-spacing:1.4px;text-transform:uppercase">
-								<?php
-								if ( is_singular( 'book' ) ) :
-									?>
-									<?php echo esc_html_x( 'About the Book', 'Hero - Book pattern headline text', 'greg-grandin' ); ?>
-									<?php
-								else :
-									?>
-									<?php echo esc_html_x( 'Latest Book', 'Hero - Book pattern headline text', 'greg-grandin' ); ?>
-									<?php
-								endif;
-								?>
+							<?php echo esc_html_x( 'Latest Book', 'Hero - Book pattern headline text', 'greg-grandin' ); ?>
 							</h2>
 							<!-- /wp:heading -->
 
@@ -216,18 +207,18 @@
 								}
 							} /-->
 
-
-
 						</div>
 						<!-- /wp:group -->
 
 						<!-- wp:group {"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
 						<div class="wp-block-group">
-							<!-- wp:pattern {"slug":"greg-grandin/element-spacer"} /-->
+							<!-- wp:pattern {"slug":"greg-grandin/element-spacer-desktop"} /-->
 
-							<!-- wp:pattern {"slug":"greg-grandin/buttons"} /-->
+							<!-- wp:pattern {"slug":"greg-grandin/buy-buttons"} /-->
+
 						
-							<!-- wp:pattern {"slug":"greg-grandin/element-spacer"} /-->
+						
+							<!-- wp:pattern {"slug":"greg-grandin/element-spacer-desktop"} /-->
 						</div>
 						<!-- /wp:group -->
 					</div>
@@ -235,7 +226,25 @@
 				</div>
 				<!-- /wp:column -->
 
-				<!-- wp:column {"verticalAlignment":"top"} -->
+				<!-- wp:column {
+					"verticalAlignment":"top",
+					"blockVisibility": {
+						"controlSets": [
+							{
+								"id": 1,
+								"enable": true,
+								"controls": {
+									"screenSize": {
+										"hideOnScreenSize": {
+											"small": true,
+											"extraSmall": true
+										}
+									}
+								}
+							}
+						]
+					}
+				} -->
 				<div class="wp-block-column is-vertically-aligned-top">
 					<!-- wp:post-featured-image {
 						"isLink": true,

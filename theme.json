@@ -41,6 +41,11 @@
 					"slug": "contrast"
 				},
 				{
+					"color": "#888888",
+					"name": "Muted Text",
+					"slug": "accent-7"
+				},
+				{
 					"color": "#ba181b",
 					"name": "Red",
 					"slug": "accent-1"
@@ -51,31 +56,30 @@
 					"slug": "accent-2"
 				},
 				{
-					"color": "#a4161a",
-					"name": "Lighter Red",
-					"slug": "accent-3"
-				},
-				{
 					"color": "#969696",
 					"name": "Gray",
 					"slug": "accent-4"
 				},
 				{
+					"color": "#dedede",
+					"name": "Lighter Gray",
+					"slug": "accent-3"
+				},
+				{
 					"color": "#FBFAF3",
-					"name": "Background Color",
+					"name": "Tinted Background",
 					"slug": "accent-5"
+				},
+				{
+					"color": "#fff1f1",
+					"name": "Tinted Background - Alt",
+					"slug": "accent-8"
 				},
 				{
 					"color": "color-mix(in srgb, currentColor 20%, transparent)",
 					"name": "Accent 6",
 					"slug": "accent-6"
-				},
-				{
-					"color": "#888888",
-					"name": "Muted Text",
-					"slug": "accent-7"
 				}
-
 			]
 		},
 		"layout": {
@@ -221,15 +225,18 @@
 					"slug": "x-small"
 				},
 				{
-					"fluid": false,
+					"fluid": {
+						"max": "1rem",
+						"min": "0.75rem"
+					},
 					"name": "Small",
 					"size": "0.875rem",
 					"slug": "small"
 				},
 				{
 					"fluid": {
-						"max": "1.125rem",
-						"min": "1rem"
+						"max": "1.25rem",
+						"min": "0.875rem"
 					},
 					"name": "Medium",
 					"size": "1rem",
@@ -237,7 +244,7 @@
 				},
 				{
 					"fluid": {
-						"max": "1.5rem",
+						"max": "1.75rem",
 						"min": "1.25rem"
 					},
 					"name": "Medium Large",
@@ -246,7 +253,7 @@
 				},
 				{
 					"fluid": {
-						"max": "1.75rem",
+						"max": "2rem",
 						"min": "1.25rem"
 					},
 					"name": "Large",
@@ -255,8 +262,8 @@
 				},
 				{
 					"fluid": {
-						"max": "2rem",
-						"min": "1.75rem"
+						"max": "2.25rem",
+						"min": "1.5rem"
 					},
 					"name": "Extra Large",
 					"size": "1.75rem",
@@ -289,6 +296,29 @@
 				}
 			},
 			"site-functionality/quotes": {},
+			"site-functionality/publication-date": {
+				"color": {
+					"text": "var(--wp--preset--color--accent-4)"
+				},
+				"elements": {
+					"link": {
+						":hover": {
+							"typography": {
+								"textDecoration": "underline"
+							}
+						},
+						"color": {
+							"text": "var(--wp--preset--color--accent-4)"
+						},
+						"typography": {
+							"textDecoration": "none"
+						}
+					}
+				},
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--small)"
+				}
+			},
 			"core/button": {
 				"border": {
 					"radius": "0px"
@@ -358,29 +388,6 @@
 				},
 				"typography": {
 					"fontSize": "var(--wp--preset--font-size--medium)"
-				}
-			},
-			"site-functionality/publication-date": {
-				"color": {
-					"text": "var(--wp--preset--color--accent-4)"
-				},
-				"elements": {
-					"link": {
-						":hover": {
-							"typography": {
-								"textDecoration": "underline"
-							}
-						},
-						"color": {
-							"text": "var(--wp--preset--color--accent-4)"
-						},
-						"typography": {
-							"textDecoration": "none"
-						}
-					}
-				},
-				"typography": {
-					"fontSize": "var(--wp--preset--font-size--small)"
 				}
 			},
 			"core/post-date": {
@@ -546,6 +553,13 @@
 				"typography": {
 					"fontSize": "var(--wp--preset--font-size--medium)",
 					"lineHeight": "1.6"
+				}
+			},
+			"core/spacer": {
+				"spacing": {
+					"margin": {
+						"top": "0"
+					}
 				}
 			},
 			"core/separator": {

@@ -10,7 +10,7 @@
 	],
 	"styles": {
 		"color": {
-			"background": "var:preset|color|accent-2",
+			"background": "var:preset|color|accent-3",
 			"text": "var:preset|color|contrast"
 		},
 		"blocks": {
@@ -103,6 +103,7 @@
 					}
 				}
 			},
+			
 			"core/pullquote": {
 				"color": {
 					"text": "currentColor"
@@ -111,6 +112,19 @@
 			"core/quote": {
 				"color": {
 					"text": "currentColor"
+				}
+			}
+		},
+		"elements": {
+			"button": {
+				"color": {
+					"background": "var:preset|color|contrast",
+					"text": "var:preset|color|base"
+				},
+				":hover": {
+					"color": {
+						"background": "color-mix(in srgb, var(--wp--preset--color--contrast) 85%, transparent)"
+					}
 				}
 			}
 		}

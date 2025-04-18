@@ -518,3 +518,151 @@ function register_post_template( array $args ): array {
 	return $args;
 }
 add_action( 'register_post_post_type_args', __NAMESPACE__ . '\register_post_template' );
+
+/**
+ * Modify Core Quote block markup
+ * Make sure block always has 'is-style-background' class added.
+ * 
+ * @link https://developer.wordpress.org/reference/classes/wp_html_tag_processor/
+ *
+ * @param string    $block_content
+ * @param array     $block
+ * @param \WP_Block $instance
+ * @return string|null
+ */
+function modify_core_quote( string $block_content, array $block, \WP_Block $instance ): ?string {
+	$block_content = new \WP_HTML_Tag_Processor( $block_content );
+	$block_content->next_tag();
+	$block_content->add_class( 'is-style-background' );
+	$block_content->add_class( 'has-accent-5-background-color' );
+	$block_content->get_updated_html();
+
+	return $block_content;
+}
+add_filter( 'render_block_core/quote', __NAMESPACE__ . '\modify_core_quote', null, 3 );
+
+/**
+ * Modify Core Quote block markup
+ * Make sure block always has 'is-style-background' class added.
+ * 
+ * @link https://developer.wordpress.org/reference/classes/wp_html_tag_processor/
+ *
+ * @param string    $block_content
+ * @param array     $block
+ * @param \WP_Block $instance
+ * @return string|null
+ */
+function modify_core_paragraph( string $block_content, array $block, \WP_Block $instance ): ?string {
+	$block_content = new \WP_HTML_Tag_Processor( $block_content );
+	$block_content->next_tag( array( 'class_name' => 'is-style-post-meta' ) );
+
+	if ( $block_content->has_class( 'publication-date' ) ) {
+		$label = esc_html__( 'Published', 'greg-grandin' );
+		$block_content->set_attribute( 'aria-label', $label );
+		// $block_content->add_class( 'label-hidden' );
+	}
+	if ( $block_content->has_class( 'publisher' ) ) {
+		$label = esc_html__( 'Publisher', 'greg-grandin' );
+		$block_content->set_attribute( 'aria-label', $label );
+	}
+	if ( $block_content->has_class( 'edition' ) ) {
+		$label = esc_html__( 'Edition', 'greg-grandin' );
+		$block_content->set_attribute( 'aria-label', $label );
+	}
+	if ( $block_content->has_class( 'language' ) ) {
+		$label = esc_html__( 'Language', 'greg-grandin' );
+		$block_content->set_attribute( 'aria-label', $label );
+	}
+	if ( $block_content->has_class( 'isbn' ) ) {
+		$label = esc_html__( 'ISBN', 'greg-grandin' );
+		$block_content->set_attribute( 'aria-label', $label );
+	}
+	if ( $block_content->has_class( 'pages' ) ) {
+		$label = esc_html__( 'Pages', 'greg-grandin' );
+		$block_content->set_attribute( 'aria-label', $label );
+	}
+	$block_content->get_updated_html();
+
+	return $block_content;
+}
+add_filter( 'render_block_core/paragraph', __NAMESPACE__ . '\modify_core_paragraph', null, 3 );
+
+/**
+ * Modify Core Group Block
+ * Add class to site `main`
+ * 
+ * @link https://developer.wordpress.org/reference/classes/wp_html_tag_processor/
+ *
+ * @param string    $block_content
+ * @param array     $block
+ * @param \WP_Block $instance
+ * @return string|null
+ */
+function modify_core_group_main( string $block_content, array $block, \WP_Block $instance ): ?string {
+	$block_content = new \WP_HTML_Tag_Processor( $block_content );
+	$block_content->next_tag( array( 'tag_name' => 'main' ) );
+	$block_content->add_class( 'site-main' );
+
+	$block_content->get_updated_html();
+
+	return $block_content;
+}
+add_filter( 'render_block_core/group', __NAMESPACE__ . '\modify_core_group_main', null, 3 );
+
+/**
+ * Remove blocks from post-content blocks.
+ */
+function remove_book_blocks( $block_content, $block ) {
+	if ( is_singular( 'book' ) && 'core/post-content' === $block['blockName'] ) {
+
+		$block_types = array(
+			'core/post-excerpt',
+			'site-functionality/buy-buttons',
+			'site-functionality/publication-date',
+			'site-functionality/publisher',
+			'site-functionality/subtitle',
+		);
+
+		$post = get_post();
+		if ( ! $post || empty( $post->post_content ) ) {
+			return $block_content;
+		}
+
+		$blocks           = parse_blocks( $post->post_content );
+		$filtered_content = '';
+
+		foreach ( $blocks as $block ) {
+			if ( in_array( $block['blockName'], $block_types, true ) ) {
+				continue;
+			}
+			$filtered_content .= render_block( $block );
+		}
+
+		return $filtered_content;
+
+	}
+	return $block_content;
+}
+// add_filter( 'get_the_content', __NAMESPACE__ . '\remove_book_blocks', 11 );
+// add_filter( 'render_block', __NAMESPACE__ . '\remove_book_blocks', 10, 2 );
+add_filter( 'render_block_core/post-content', __NAMESPACE__ . '\remove_book_blocks', 10, 2 );
+
+/**
+ * Sort by Menu Order
+ * 
+ * @link https://developer.wordpress.org/reference/hooks/query_loop_block_query_vars/
+ *
+ * @param array $query
+ * @return array $query
+ */
+function modify_book_query( $query ) {
+	if ( 'book' !== $query['post_type'] ) {
+		return $query;
+	}
+
+	$query['orderby'] = 'menu_order';
+	$query['order']   = 'asc';
+
+	return $query;
+}
+add_filter( 'query_loop_block_query_vars', __NAMESPACE__ . '\modify_book_query' );

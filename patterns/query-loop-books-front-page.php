@@ -1,10 +1,10 @@
 <?php
 /**
- * Title: List of books
- * Slug: greg-grandin/query-loop-books
+ * Title: List of books - Home
+ * Slug: greg-grandin/query-loop-books-front-page
  * Categories: query, posts
  * Block Types: core/query
- * Description: A list of books.
+ * Description: A list of books for the homepage.
  *
  * @package WordPress
  * @subpackage Greg_Grandin
@@ -13,23 +13,29 @@
 $per_page = ( get_option( 'posts_per_page' ) ) ? get_option( 'posts_per_page' ) : 10;
 ?>
 <!-- wp:query {
-    "queryId": 1,
-    "query": {
-        "perPage": <?php echo intval( $posts_per_page ); ?>,
-        "pages": 0,
-        "offset": 0,
-        "postType": "book",
-        "order": "desc",
-        "orderBy": "date",
-        "author": "",
-        "search": "",
-        "exclude": [],
-        "sticky": "",
-        "inherit": true,
-        "parents": [],
-        "format": []
-    },
-    "enhancedPagination": false,
+	"queryId": 31,
+	"query": {
+		"perPage": <?php echo intval( $posts_per_page ); ?>,
+		"pages": 0,
+		"offset": 1,
+		"postType": "book",
+		"order": "asc",
+		"orderBy": "date",
+		"author": "",
+		"search": "",
+		"exclude": [],
+		"sticky": "",
+		"inherit": false,
+		"parents": [],
+		"format": []
+	},
+	"metadata": {
+		"categories": [
+			"posts"
+		],
+		"patternName": "greg-grandin/query-loop-books-front-page",
+		"name": "Home Page Books"
+	},
 	"className": "post-list book-list"
 } -->
 <div class="wp-block-query post-list book-list">
@@ -152,6 +158,10 @@ $per_page = ( get_option( 'posts_per_page' ) ) ? get_option( 'posts_per_page' ) 
 
 	<!-- /wp:post-template -->
 
+	<?php
+	if ( ! is_front_page() ) :
+		?>
+
 		<!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
 		<div class="wp-block-group alignwide">
 			<!-- wp:query-pagination {"paginationArrow":"arrow","align":"wide","layout":{"type":"flex","justifyContent":"space-between"}} -->
@@ -163,6 +173,10 @@ $per_page = ( get_option( 'posts_per_page' ) ) ? get_option( 'posts_per_page' ) 
 			<!-- /wp:query-pagination -->
 		</div>
 		<!-- /wp:group -->
+
+		<?php
+		endif;
+	?>
 
 	<!-- wp:query-no-results -->
 		<!-- wp:paragraph -->

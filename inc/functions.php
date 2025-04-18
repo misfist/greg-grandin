@@ -36,7 +36,7 @@ function render_subtitle() {
 	}
 }
 
- /**
+/**
  * Get book quotes
  *
  * @return string
