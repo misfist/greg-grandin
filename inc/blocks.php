@@ -518,3 +518,67 @@ function register_post_template( array $args ): array {
 	return $args;
 }
 add_action( 'register_post_post_type_args', __NAMESPACE__ . '\register_post_template' );
+
+/**
+ * Modify Core Quote block markup
+ * Make sure block always has 'is-style-background' class added.
+ *
+ * @param string    $block_content
+ * @param array     $block
+ * @param \WP_Block $instance
+ * @return string|null
+ */
+function modify_core_quote( string $block_content, array $block, \WP_Block $instance ): ?string {
+	$block_content = new \WP_HTML_Tag_Processor( $block_content );
+	$block_content->next_tag();
+	$block_content->add_class( 'is-style-background' );
+	$block_content->add_class( 'has-accent-5-background-color' );
+	$block_content->get_updated_html();
+
+	return $block_content;
+}
+add_filter( 'render_block_core/quote', __NAMESPACE__ . '\modify_core_quote', null, 3 );
+
+/**
+ * Modify Core Quote block markup
+ * Make sure block always has 'is-style-background' class added.
+ *
+ * @param string    $block_content
+ * @param array     $block
+ * @param \WP_Block $instance
+ * @return string|null
+ */
+function modify_core_paragraph( string $block_content, array $block, \WP_Block $instance ): ?string {
+	$block_content = new \WP_HTML_Tag_Processor( $block_content );
+	$block_content->next_tag( array( 'class_name' => 'is-style-post-meta' ) );
+
+	if ( $block_content->has_class( 'publication-date' ) ) {
+		$label = esc_html__( 'Published', 'greg-grandin' );
+		$block_content->set_attribute( 'aria-label', $label );
+		// $block_content->add_class( 'label-hidden' );
+	}
+	if ( $block_content->has_class( 'publisher' ) ) {
+		$label = esc_html__( 'Publisher', 'greg-grandin' );
+		$block_content->set_attribute( 'aria-label', $label );
+	}
+	if ( $block_content->has_class( 'edition' ) ) {
+		$label = esc_html__( 'Edition', 'greg-grandin' );
+		$block_content->set_attribute( 'aria-label', $label );
+	}
+	if ( $block_content->has_class( 'language' ) ) {
+		$label = esc_html__( 'Language', 'greg-grandin' );
+		$block_content->set_attribute( 'aria-label', $label );
+	}
+	if ( $block_content->has_class( 'isbn' ) ) {
+		$label = esc_html__( 'ISBN', 'greg-grandin' );
+		$block_content->set_attribute( 'aria-label', $label );
+	}
+	if ( $block_content->has_class( 'pages' ) ) {
+		$label = esc_html__( 'Pages', 'greg-grandin' );
+		$block_content->set_attribute( 'aria-label', $label );
+	}
+	$block_content->get_updated_html();
+
+	return $block_content;
+}
+add_filter( 'render_block_core/paragraph', __NAMESPACE__ . '\modify_core_paragraph', null, 3 );
