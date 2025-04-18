@@ -19,7 +19,7 @@
 
 	<!-- wp:group {"align":"wide","layout":{"type":"default"}} -->
 	<div class="wp-block-group alignwide">
-		<!-- wp:pattern {"slug":"greg-grandin/query-loop-books"} /-->
+		<!-- wp:pattern {"slug":"greg-grandin/query-loop-books-front-page"} /-->
 	</div>
 	<!-- /wp:group -->
 </main>
