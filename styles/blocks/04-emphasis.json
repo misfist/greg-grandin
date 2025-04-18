@@ -10,17 +10,18 @@
 			"fontSize": "var:preset|font-size|medium-large",
 			"lineHeight": "1.2",
 			"textTransform": "uppercase",
+			"fontStyle": "italic",
 			"fontWeight": "400"
 		},
 		"elements": {
             "link": {
                 "color": {
-                    "text": "var:preset|color|accent-3"
+                    "text": "var:preset|color|accent-1"
                 }
             }
         },
 		"color": {
-			"text": "var:preset|color|accent-3"
+			"text": "var:preset|color|accent-1"
 		}
 	}
 }

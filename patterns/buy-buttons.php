@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Buttons
- * Slug: greg-grandin/buttons
+ * Slug: greg-grandin/buy-buttons
  * Categories: Buttons
  * Inserter: false
  */

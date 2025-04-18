@@ -90,6 +90,16 @@ main:has( .book-hero ) {
 	margin-left: auto;
 }
 
+:where( h1.wp-block-post-title, h1.wp-block-query-title ) {
+	border-bottom: 5px solid var( --wp--preset--color--accent-1 );
+	padding-bottom: .5em;
+	// text-decoration: underline;
+	// text-underline-offset: .5em;
+	// text-decoration-thickness: 5px;
+	// text-decoration-color: var( --wp--preset--color--accent-1 ) !important; 
+	margin-bottom: 1em !important;
+}
+
 .book-list {
 	.wp-block-post {
 		&:last-child {

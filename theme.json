@@ -71,6 +71,11 @@
 					"slug": "accent-5"
 				},
 				{
+					"color": "#fff1f1",
+					"name": "Tinted Background - Alt",
+					"slug": "accent-8"
+				},
+				{
 					"color": "color-mix(in srgb, currentColor 20%, transparent)",
 					"name": "Accent 6",
 					"slug": "accent-6"
@@ -239,7 +244,7 @@
 				},
 				{
 					"fluid": {
-						"max": "1.5rem",
+						"max": "1.75rem",
 						"min": "1.25rem"
 					},
 					"name": "Medium Large",
@@ -248,7 +253,7 @@
 				},
 				{
 					"fluid": {
-						"max": "1.75rem",
+						"max": "2rem",
 						"min": "1.25rem"
 					},
 					"name": "Large",
@@ -257,8 +262,8 @@
 				},
 				{
 					"fluid": {
-						"max": "2rem",
-						"min": "1.75rem"
+						"max": "2.25rem",
+						"min": "1.5rem"
 					},
 					"name": "Extra Large",
 					"size": "1.75rem",
@@ -291,6 +296,29 @@
 				}
 			},
 			"site-functionality/quotes": {},
+			"site-functionality/publication-date": {
+				"color": {
+					"text": "var(--wp--preset--color--accent-4)"
+				},
+				"elements": {
+					"link": {
+						":hover": {
+							"typography": {
+								"textDecoration": "underline"
+							}
+						},
+						"color": {
+							"text": "var(--wp--preset--color--accent-4)"
+						},
+						"typography": {
+							"textDecoration": "none"
+						}
+					}
+				},
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--small)"
+				}
+			},
 			"core/button": {
 				"border": {
 					"radius": "0px"
@@ -360,29 +388,6 @@
 				},
 				"typography": {
 					"fontSize": "var(--wp--preset--font-size--medium)"
-				}
-			},
-			"site-functionality/publication-date": {
-				"color": {
-					"text": "var(--wp--preset--color--accent-4)"
-				},
-				"elements": {
-					"link": {
-						":hover": {
-							"typography": {
-								"textDecoration": "underline"
-							}
-						},
-						"color": {
-							"text": "var(--wp--preset--color--accent-4)"
-						},
-						"typography": {
-							"textDecoration": "none"
-						}
-					}
-				},
-				"typography": {
-					"fontSize": "var(--wp--preset--font-size--small)"
 				}
 			},
 			"core/post-date": {
@@ -548,6 +553,13 @@
 				"typography": {
 					"fontSize": "var(--wp--preset--font-size--medium)",
 					"lineHeight": "1.6"
+				}
+			},
+			"core/spacer": {
+				"spacing": {
+					"margin": {
+						"top": "0"
+					}
 				}
 			},
 			"core/separator": {

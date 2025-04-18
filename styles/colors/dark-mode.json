@@ -91,12 +91,12 @@
 				"elements": {
 					"button": {
 						"color": {
-							"background": "var:preset|color|accent-2",
+							"background": "var:preset|color|accent-8",
 							"text": "var:preset|color|contrast"
 						},
 						":hover": {
 							"color": {
-								"background": "color-mix(in srgb, var(--wp--preset--color--accent-2) 85%, transparent)"
+								"background": "color-mix(in srgb, var(--wp--preset--color--accent-1) 85%, transparent)"
 							}
 						}
 					}
