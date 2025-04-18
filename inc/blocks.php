@@ -604,3 +604,22 @@ function modify_core_group_main( string $block_content, array $block, \WP_Block 
 	return $block_content;
 }
 add_filter( 'render_block_core/group', __NAMESPACE__ . '\modify_core_group_main', null, 3 );
+/**
+ * Sort by Menu Order
+ * 
+ * @link https://developer.wordpress.org/reference/hooks/query_loop_block_query_vars/
+ *
+ * @param array $query
+ * @return array $query
+ */
+function modify_book_query( $query ) {
+	if ( 'book' !== $query['post_type'] ) {
+		return $query;
+	}
+
+	$query['orderby'] = 'menu_order';
+	$query['order']   = 'asc';
+
+	return $query;
+}
+add_filter( 'query_loop_block_query_vars', __NAMESPACE__ . '\modify_book_query' );
