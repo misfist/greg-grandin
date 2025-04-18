@@ -63,6 +63,19 @@
 	width: 100%;
 }
 
+.wp-block-site-title {
+	&:where(a) {
+		color: currentColor;
+	}
+
+	a {
+		&:hover,
+		&:focus {
+			color: currentColor;
+		}
+	}
+}
+
 main:has( .book-hero ) {
 	margin-top: 0 !important;
 }
