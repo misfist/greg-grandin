@@ -21,45 +21,6 @@ function append_subtitle( $title, $post_id ): string {
 }
 // add_filter( 'the_title', __NAMESPACE__ . '\append_subtitle', 10, 2 );
 
-
-/**
- * Remove blocks from post-content blocks.
- */
-function remove_book_blocks( $block_content, $block ) {
-	if ( is_singular( 'book' ) && 'core/post-content' === $block['blockName'] ) {
-
-		$block_types = array(
-			'core/post-excerpt',
-			'site-functionality/buy-buttons',
-			'site-functionality/publication-date',
-			'site-functionality/publisher',
-			'site-functionality/subtitle',
-		);
-
-		$post = get_post();
-		if ( ! $post || empty( $post->post_content ) ) {
-			return $block_content;
-		}
-
-		$blocks           = parse_blocks( $post->post_content );
-		$filtered_content = '';
-
-		foreach ( $blocks as $block ) {
-			if ( in_array( $block['blockName'], $block_types, true ) ) {
-				continue;
-			}
-			$filtered_content .= render_block( $block );
-		}
-
-		return $filtered_content;
-
-	}
-	return $block_content;
-}
-// add_filter( 'get_the_content', __NAMESPACE__ . '\remove_book_blocks', 11 );
-// add_filter( 'render_block', __NAMESPACE__ . '\remove_book_blocks', 10, 2 );
-add_filter( 'render_block_core/post-content', __NAMESPACE__ . '\remove_book_blocks', 10, 2 );
-
 /**
  * Only display manual post excerpt.
  *

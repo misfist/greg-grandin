@@ -522,6 +522,8 @@ add_action( 'register_post_post_type_args', __NAMESPACE__ . '\register_post_temp
 /**
  * Modify Core Quote block markup
  * Make sure block always has 'is-style-background' class added.
+ * 
+ * @link https://developer.wordpress.org/reference/classes/wp_html_tag_processor/
  *
  * @param string    $block_content
  * @param array     $block
@@ -542,6 +544,8 @@ add_filter( 'render_block_core/quote', __NAMESPACE__ . '\modify_core_quote', nul
 /**
  * Modify Core Quote block markup
  * Make sure block always has 'is-style-background' class added.
+ * 
+ * @link https://developer.wordpress.org/reference/classes/wp_html_tag_processor/
  *
  * @param string    $block_content
  * @param array     $block
@@ -604,6 +608,45 @@ function modify_core_group_main( string $block_content, array $block, \WP_Block 
 	return $block_content;
 }
 add_filter( 'render_block_core/group', __NAMESPACE__ . '\modify_core_group_main', null, 3 );
+
+/**
+ * Remove blocks from post-content blocks.
+ */
+function remove_book_blocks( $block_content, $block ) {
+	if ( is_singular( 'book' ) && 'core/post-content' === $block['blockName'] ) {
+
+		$block_types = array(
+			'core/post-excerpt',
+			'site-functionality/buy-buttons',
+			'site-functionality/publication-date',
+			'site-functionality/publisher',
+			'site-functionality/subtitle',
+		);
+
+		$post = get_post();
+		if ( ! $post || empty( $post->post_content ) ) {
+			return $block_content;
+		}
+
+		$blocks           = parse_blocks( $post->post_content );
+		$filtered_content = '';
+
+		foreach ( $blocks as $block ) {
+			if ( in_array( $block['blockName'], $block_types, true ) ) {
+				continue;
+			}
+			$filtered_content .= render_block( $block );
+		}
+
+		return $filtered_content;
+
+	}
+	return $block_content;
+}
+// add_filter( 'get_the_content', __NAMESPACE__ . '\remove_book_blocks', 11 );
+// add_filter( 'render_block', __NAMESPACE__ . '\remove_book_blocks', 10, 2 );
+add_filter( 'render_block_core/post-content', __NAMESPACE__ . '\remove_book_blocks', 10, 2 );
+
 /**
  * Sort by Menu Order
  * 
