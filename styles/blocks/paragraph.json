@@ -8,9 +8,6 @@
 		"core/group"
 	],
 	"styles": {
-		"color": {
-			"text": "var:preset|color|accent-7"
-		},
 		"typography": {
 			"fontSize": "var:preset|font-size|small"
 		}
