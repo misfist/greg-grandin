@@ -12,21 +12,12 @@
  */
 
 ?>
-
 <!-- wp:spacer {
-	"style": {
-		"layout": {
-			"selfStretch": "fit",
-			"flexSize": null
-		},
-		"spacing": {
-			"margin": {
-				"top": "var:preset|spacing|20",
-				"bottom": "var:preset|spacing|20"
-			}
-		}
-	},
-	"blockVisibility": {
+  "height": "2em",
+  "metadata": {
+    "name": "Spacer"
+  },
+  "blockVisibility": {
 		"controlSets": [
 			{
 				"id": 1,
@@ -43,6 +34,5 @@
 		]
 	}
 } -->
-<div style="margin-top:var(--wp--preset--spacing--20);margin-bottom:var(--wp--preset--spacing--20)"
-	aria-hidden="true" class="wp-block-spacer"></div>
+<div aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
