@@ -582,3 +582,25 @@ function modify_core_paragraph( string $block_content, array $block, \WP_Block $
 	return $block_content;
 }
 add_filter( 'render_block_core/paragraph', __NAMESPACE__ . '\modify_core_paragraph', null, 3 );
+
+/**
+ * Modify Core Group Block
+ * Add class to site `main`
+ * 
+ * @link https://developer.wordpress.org/reference/classes/wp_html_tag_processor/
+ *
+ * @param string    $block_content
+ * @param array     $block
+ * @param \WP_Block $instance
+ * @return string|null
+ */
+function modify_core_group_main( string $block_content, array $block, \WP_Block $instance ): ?string {
+	$block_content = new \WP_HTML_Tag_Processor( $block_content );
+	$block_content->next_tag( array( 'tag_name' => 'main' ) );
+	$block_content->add_class( 'site-main' );
+
+	$block_content->get_updated_html();
+
+	return $block_content;
+}
+add_filter( 'render_block_core/group', __NAMESPACE__ . '\modify_core_group_main', null, 3 );
