@@ -90,6 +90,10 @@ main:has( .book-hero ) {
 	margin-left: auto;
 }
 
+.wp-singular .wp-block-post-featured-image {
+	max-width: 100%;
+}
+
 :where( h1.wp-block-post-title, h1.wp-block-query-title ) {
 	border-bottom: 5px solid var( --wp--preset--color--accent-1 );
 	padding-bottom: .5em;
