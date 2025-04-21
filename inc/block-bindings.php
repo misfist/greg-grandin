@@ -164,24 +164,3 @@ function copyright_binding(): string {
 	return sprintf( '&copy; %s', date( 'Y' ) );
 }
 
-/**
- * Display book buttons
- *
- * @return void
- */
-function display_book_buttons() {
-	global $post;
-
-	$blocks = parse_blocks( $post->post_content );
-
-	foreach ( $blocks as $block ) {
-
-		if ( 'site-functionality/buy-buttons' === $block['blockName'] ) {
-
-			echo apply_filters( 'the_content', render_block( $block ) );
-
-			break;
-
-		}
-	}
-}

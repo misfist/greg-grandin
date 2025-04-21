@@ -19,8 +19,8 @@ $books = get_post_type_archive_link( 'book' );
 
 	<!-- wp:pattern {"slug":"greg-grandin/hero-book-latest"} /-->
 
-	<!-- wp:group {"align":"wide","layout":{"type":"default"}} -->
-	<div class="wp-block-group alignwide">
+	<!-- wp:group {"align":"wide","layout":{"type":"default"},"className":"body-content"} -->
+	<div class="wp-block-group alignwide body-content">
 		<!-- wp:pattern {"slug":"greg-grandin/query-loop-books-front-page"} /-->
 
 		<!-- wp:paragraph {

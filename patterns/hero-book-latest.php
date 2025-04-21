@@ -13,6 +13,8 @@
  * @since Greg Grandin 1.0
  */
 use function Greg_Grandin\display_book_buttons;
+use function Greg_Grandin\get_latest_book_id;
+$post_id = get_latest_book_id();
 ?>
 
 <!-- wp:group {
@@ -23,7 +25,7 @@ use function Greg_Grandin\display_book_buttons;
 		"name": "Latest Book"
 	},
 	"align": "full",
-	"className": "is-style-section-1 book-hero",
+	"className": "is-style-section-1 book-hero book-hero-latest",
 	"style": {
 		"spacing": {
 			"padding": {
@@ -40,7 +42,7 @@ use function Greg_Grandin\display_book_buttons;
 		"type": "default"
 	}
 } -->
-<div class="wp-block-group alignfull is-style-section-1 book-hero" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
+<div class="wp-block-group alignfull is-style-section-1 book-hero book-hero-latest" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
 
 	<!-- wp:query {
 	"queryId": 115,
@@ -133,23 +135,9 @@ use function Greg_Grandin\display_book_buttons;
 									<h2 class="wp-block-heading alignwide has-small-font-size" style="font-style:normal;font-weight:700;letter-spacing:1.4px;text-transform:uppercase"><?php echo esc_html_x( 'Latest Book', 'Hero - Book pattern headline text', 'greg-grandin' ); ?></h2>
 									<!-- /wp:heading -->
 
-									<!-- wp:post-title {"isLink":false,"fontSize":"xx-large"} /-->
+									<!-- wp:post-title {"isLink":true,"fontSize":"xx-large"} /-->
 
-									<!-- wp:heading {
-										"metadata": {
-											"bindings": {
-												"content": {
-													"source": "core/post-meta",
-													"args": {
-														"key": "subtitle"
-													}
-												}
-											}
-										},
-										"className": "wp-block-post-title is-style-subtitle"
-									} -->
-									<h2 class="wp-block-heading wp-block-post-title is-style-subtitle"></h2>
-									<!-- /wp:heading -->
+									<!-- wp:pattern {"slug":"greg-grandin/binding-subtitle"} /-->
 
 									<!-- wp:paragraph {
 										"metadata": {
@@ -218,7 +206,7 @@ use function Greg_Grandin\display_book_buttons;
 								<div class="wp-block-group">
 									<!-- wp:pattern {"slug":"greg-grandin/element-spacer"} /-->
 
-									<?php display_book_buttons(); ?>
+									<?php display_book_buttons( $post_id ); ?>
 
 									<!-- wp:pattern {"slug":"greg-grandin/element-spacer"} /-->
 								</div>
