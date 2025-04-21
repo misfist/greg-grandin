@@ -70,6 +70,42 @@ function register_block_bindings() {
 			'uses_context'       => array( 'postId' ),
 		)
 	);
+
+	register_block_bindings_source(
+		'greg-grandin/featured-image',
+		array(
+			'label'              => _x( 'Featured Image', 'Label for the block binding placeholder in the editor', 'greg-grandin' ),
+			'get_value_callback' => __NAMESPACE__ . '\featured_image',
+			'uses_context'       => array( 'postId' ),
+		)
+	);
+
+	register_block_bindings_source(
+		'greg-grandin/featured-image-url',
+		array(
+			'label'              => _x( 'Featured Image', 'Label for the block binding placeholder in the editor', 'greg-grandin' ),
+			'get_value_callback' => __NAMESPACE__ . '\featured_image_url',
+			'uses_context'       => array( 'postId' ),
+		)
+	);
+
+	register_block_bindings_source(
+		'greg-grandin/featured-image-alt',
+		array(
+			'label'              => _x( 'Featured Image Alt', 'Label for the block binding placeholder in the editor', 'greg-grandin' ),
+			'get_value_callback' => __NAMESPACE__ . '\featured_image_alt',
+			'uses_context'       => array( 'postId' ),
+		)
+	);
+
+	register_block_bindings_source(
+		'greg-grandin/featured-image-id',
+		array(
+			'label'              => _x( 'Featured Image ID', 'Label for the block binding placeholder in the editor', 'greg-grandin' ),
+			'get_value_callback' => __NAMESPACE__ . '\featured_image_id',
+			'uses_context'       => array( 'postId' ),
+		)
+	);
 }
 add_action( 'init', __NAMESPACE__ . '\register_block_bindings' );
 
@@ -130,7 +166,7 @@ function publication_date_binding( array $source_args, $block_instance ): string
  * @return string
  */
 function publication_date_full_binding( array $source_args, $block_instance ): string {
-	$post_id = $block_instance->context['postId'];
+	$post_id          = $block_instance->context['postId'];
 	$publication_date = get_post_meta( $post_id, 'publication_date', true );
 	if ( $publication_date ) {
 		$format = 'F j, Y';
@@ -164,3 +200,85 @@ function copyright_binding(): string {
 	return sprintf( '&copy; %s', date( 'Y' ) );
 }
 
+/**
+ * Get Featured Image URL
+ *
+ * @param array     $source_args
+ * @param \WP_Block $block_instance
+ * @return string|null
+ */
+function featured_image_url( array $source_args, \WP_Block $block_instance ): ?string {
+	if ( ! isset( $block_instance->context['postId'] ) ) {
+		return null;
+	}
+	$post_id = $block_instance->context['postId'];
+	$size    = ( isset( $source_args['size'] ) ) ? sanitize_key( $source_args['size'] ) : 'large';
+	return get_the_post_thumbnail_url( $post_id, $size );
+}
+
+/**
+ * Get Featured Image Alt
+ *
+ * @param array     $source_args
+ * @param \WP_Block $block_instance
+ * @return string|null
+ */
+function featured_image_alt( array $source_args, \WP_Block $block_instance ): ?string {
+	if ( ! isset( $block_instance->context['postId'] ) ) {
+		return null;
+	}
+	$post_id  = $block_instance->context['postId'];
+	$image_id = get_post_thumbnail_id( $post_id );
+	if ( $image_id ) {
+		return get_post_meta( $image_id, '_wp_attachment_image_alt', true );
+	}
+
+	return null;
+}
+
+/**
+ * Get Featured Image ID
+ *
+ * @param array     $source_args
+ * @param \WP_Block $block_instance
+ * @return string|null
+ */
+function featured_image_id( array $source_args, \WP_Block $block_instance ): ?string {
+	if ( ! isset( $block_instance->context['postId'] ) ) {
+		return null;
+	}
+	$post_id = $block_instance->context['postId'];
+	return get_post_meta( $post_id, '_thumbnail_id', true );
+}
+
+/**
+ * Get Featured Image ID
+ *
+ * @param array     $source_args
+ * @param \WP_Block $block_instance
+ * @return string|null
+ */
+function featured_image( array $source_args, \WP_Block $block_instance ): ?string {
+	if ( ! isset( $source_args['key'] ) ) {
+		return null;
+	}
+	$post_id  = (int) $block_instance->context['postId'];
+	$image_id = get_post_thumbnail_id( $post_id );
+
+	switch ( $source_args['key'] ) {
+		case 'id':
+			return (int) get_post_meta( $post_id, '_thumbnail_id', true );
+		case 'url':
+			$size = ( isset( $source_args['size'] ) ) ? sanitize_key( $source_args['size'] ) : 'large';
+			return get_the_post_thumbnail_url( $post_id, $size );
+		case 'alt':
+			if ( $image_id ) {
+				return get_post_meta( $image_id, '_wp_attachment_image_alt', true );
+			}
+			return null;
+		case 'title':
+			return get_the_title( $post_id);
+		default:
+			return null;
+	}
+}
