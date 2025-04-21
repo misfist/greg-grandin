@@ -41,23 +41,23 @@ function render_subtitle() {
  *
  * @return string
  */
-function get_blockquotes( $post_id = null ) : ?string {
+function get_blockquotes( $post_id = null, $number = 2 ): ?string {
 	global $post;
-	$post_id = ( $post_id ) ? $post_id : $post->ID;
+	$post_id    = ( $post_id ) ? $post_id : $post->ID;
 	$block_name = 'core/quote';
 
-	if( ! has_block( $block_name, $post_id ) ) {
+	if ( ! has_block( $block_name, $post_id ) ) {
 		return null;
 	}
-	
+
 	$blocks = parse_blocks( $post->post_content );
-	$max    = 2;
+	$max    = $number;
 	$count  = 0;
 
 	$output = '';
 
 	foreach ( $blocks as $block ) {
-		if ( 'core/quote' === $block['blockName'] ) {
+		if ( $block_name === $block['blockName'] ) {
 			if ( $max < $count ) {
 				break;
 			}
@@ -74,30 +74,71 @@ function get_blockquotes( $post_id = null ) : ?string {
  *
  * @return void
  */
-function render_blockquotes( $post_id = null ) {
+function render_blockquotes( $post_id = null, $number = 2 ) {
 	global $post;
 	$post_id = ( $post_id ) ? $post_id : $post->ID;
 
-	echo get_blockquotes( $post_id );
-	// $block_name = 'core/quote';
+	echo get_blockquotes( $post_id, $number );
+}
 
-	// if( ! has_block( $block_name, $post_id ) ) {
-	// 	return;
-	// }
-	
-	// $blocks = parse_blocks( $post->post_content );
-	// $max    = 2;
-	// $count  = 0;
+/**
+ * Get book quotes
+ *
+ * @return string
+ */
+function get_book_buttons( $post_id = null ): ?string {
+	global $post;
+	$post_id    = ( $post_id ) ? $post_id : get_the_ID();
+	$post = get_post( $post_id );
 
-	// foreach ( $blocks as $block ) {
-	// 	if ( 'core/quote' === $block['blockName'] ) {
-	// 		if ( $max < $count ) {
-	// 			break;
-	// 		}
-	// 		// error_log( $block['blockName'] . '' . $count );
-	// 		echo render_block( $block );
-	// 		++$count;
-	// 	}
-	// }
-	// // return;
+	$block_name = 'site-functionality/buy-buttons';
+
+	if ( ! has_block( $block_name, $post_id ) ) {
+		return null;
+	}
+
+	$blocks = parse_blocks( $post->post_content );
+
+
+	$output = '';
+
+	foreach ( $blocks as $block ) {
+		if ( $block_name === $block['blockName'] ) {
+			$output .= render_block( $block );
+		}
+	}
+	return $output;
+}
+
+
+/**
+ * Display book buttons
+ *
+ * @return void
+ */
+function display_book_buttons( $post_id = null ): void {
+	global $post;
+	$post_id = ( $post_id ) ? $post_id : $post->ID;
+
+	echo get_book_buttons( $post_id, $number );
+}
+
+/**
+ * Get the Latest Book ID
+ *
+ * @return integer|null
+ */
+function get_latest_book_id() : ?int {
+	$args = array(
+		'post_type'      => 'book',
+		'posts_per_page' => 1,
+		'orderby'        => 'menu_order',
+		'order'          => 'asc',
+		'fields' => 'ids',
+	);
+	$posts = get_posts( $args );
+	if( ! empty( $posts ) && ! is_wp_error( $posts ) ) {
+		return $posts[0];
+	}
+	return null;
 }
