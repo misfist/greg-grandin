@@ -26,6 +26,8 @@
 			<!-- wp:post-terms {"term":"post_tag","separator":"  ","className":"is-style-post-terms-1"} /-->
 		</div>
 		<!-- /wp:group -->
+
+		<!-- wp:site-functionality/edit-link /-->
 		
 		<!-- wp:pattern {"slug":"greg-grandin/post-navigation"} /-->
 	</div>

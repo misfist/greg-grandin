@@ -40,6 +40,8 @@
 		<!-- wp:post-content {"align":"full","layout":{"type":"constrained"}} /-->
 
 		<!-- wp:pattern {"slug":"greg-grandin/book-details"} /-->
+
+		<!-- wp:site-functionality/edit-link /-->
 		
 	</div>
 	<!-- /wp:group -->
