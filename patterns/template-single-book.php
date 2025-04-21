@@ -16,8 +16,8 @@
 <main class="wp-block-group" style="margin-top:var(--wp--preset--spacing--60)">
 	<!-- wp:pattern {"slug":"greg-grandin/hero-book"} /-->
 
-	<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
-	<div class="wp-block-group alignfull" style="padding-bottom:var(--wp--preset--spacing--60)">
+	<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained"},"className":"body-content"} -->
+	<div class="wp-block-group alignfull body-content" style="padding-bottom:var(--wp--preset--spacing--60)">
 
 		<!-- wp:heading {
 			"textAlign": "center",
