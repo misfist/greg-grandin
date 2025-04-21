@@ -199,7 +199,7 @@ use function Greg_Grandin\display_book_buttons;
 			 } -->
 			<div class="wp-block-column is-vertically-aligned-top">
 				<!-- wp:post-featured-image {
-					"isLink": true,
+					"sizeSlug":"large",
 					"aspectRatio": "2/3",
 					"metadata": {
 						"name": "Featured Image - Desktop"

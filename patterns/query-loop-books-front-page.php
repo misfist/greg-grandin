@@ -121,6 +121,7 @@ $per_page = ( get_option( 'posts_per_page' ) ) ? get_option( 'posts_per_page' ) 
 			<div class="wp-block-column column-right column-2" style="flex-basis:20%">
 				<!-- wp:post-featured-image {
 					"isLink": true,
+					"sizeSlug":"medium",
 					"aspectRatio": "2/3",
 					"style": {
 						"shadow": "var:preset|shadow|natural"
