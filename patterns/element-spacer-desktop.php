@@ -40,5 +40,5 @@
     ]
   }
 } -->
-<div aria-hidden="true" class="wp-block-spacer"></div>
+<div style="height:2em" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->

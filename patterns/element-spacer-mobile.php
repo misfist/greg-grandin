@@ -12,6 +12,6 @@
  */
 
 ?>
-<!-- wp:spacer {"height":"2em","metadata":{"name":"Spacer - Mobile"},"blockVisibility":{"visibilityPresets":{"presets":[],"operator":"atLeastOne"},"controlSets":[{"id":2,"enable":true,"controls":{"screenSize":{"hideOnScreenSize":{"extraLarge":true,"large":true}}}}]}} -->
+<!-- wp:spacer {"height":"2em","metadata":{"name":"Spacer - Mobile"},"blockVisibility":{"controlSets":[{"id":1,"enable":true,"controls":{"screenSize":{"hideOnScreenSize":{"extraLarge":true,"large":true}}}}]}} -->
 <div style="height:2em" aria-hidden="true" class="wp-block-spacer"></div>
 <!-- /wp:spacer -->
