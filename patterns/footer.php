@@ -22,13 +22,17 @@
 
             <!-- wp:site-tagline {"fontSize":"small"} /-->
 
-            <!-- wp:navigation {"ref":53,"overlayMenu":"never"} /-->
+
+            <!-- wp:pattern {"slug":"greg-grandin/binding-copyright"} /-->
         </div>
         <!-- /wp:group -->
 
         <!-- wp:group {"layout":{"type":"constrained"}} -->
         <div class="wp-block-group">
-            <!-- wp:navigation {"ref":4,"overlayMenu":"never","style":{"typography":{"textDecoration":"underline"}},"fontSize":"small","layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"left","orientation":"horizontal"}} /-->
+            <!-- wp:navigation {"ref":4,"overlayMenu":"never","style":{"typography":{"textDecoration":"underline"}},"fontSize":"small","layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"right","orientation":"horizontal"}} /-->
+             
+            <!-- wp:navigation {"ref":53,"overlayMenu":"never","style":{"typography":{"textDecoration":"underline"}},"fontSize":"small","layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"right","orientation":"horizontal"}} /-->
+            
         </div>
         <!-- /wp:group -->
     </div>

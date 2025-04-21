@@ -20,7 +20,7 @@
 			}
 		}
 	},
-	"fontSize": "small"
+	"fontSize": "x-small"
 } -->
-<p class="has-small-font-size"></p>
+<p class="has-x-small-font-size"></p>
 <!-- /wp:paragraph -->
