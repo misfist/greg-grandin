@@ -183,6 +183,23 @@ $post_id = get_latest_book_id();
 										}
 									} /-->
 
+									<!-- wp:heading {
+										"level": 3,
+										"metadata": {
+											"bindings": {
+												"content": {
+													"source": "core/post-meta",
+													"args": {
+														"key": "awards"
+													}
+												}
+											}
+										},
+										"className": "is-style-text-emphasis"
+									} -->
+									<h3 class="wp-block-heading is-style-text-emphasis"></h3>
+									<!-- /wp:heading -->
+
 									<!-- wp:post-excerpt {
 										"controlSets": [
 											{
@@ -199,6 +216,7 @@ $post_id = get_latest_book_id();
 											}
 										]
 									} /-->
+
 								</div>
 								<!-- /wp:group -->
 
