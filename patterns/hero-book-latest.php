@@ -23,7 +23,7 @@ use function Greg_Grandin\display_book_buttons;
 		"name": "Latest Book"
 	},
 	"align": "full",
-	"className": "is-style-section-1 book-hero",
+	"className": "is-style-section-1 book-hero book-hero-latest",
 	"style": {
 		"spacing": {
 			"padding": {
@@ -40,7 +40,7 @@ use function Greg_Grandin\display_book_buttons;
 		"type": "default"
 	}
 } -->
-<div class="wp-block-group alignfull is-style-section-1 book-hero" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
+<div class="wp-block-group alignfull is-style-section-1 book-hero book-hero-latest" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
 
 	<!-- wp:query {
 	"queryId": 115,
