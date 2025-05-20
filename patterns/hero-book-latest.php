@@ -297,7 +297,7 @@ $number_reviews = get_option( 'hero_review_count', null );
 							"controlSets": [
 								{
 									"id": 1,
-									"enable": true,
+									"enable": false,
 									"controls": {
 										"screenSize": {
 											"hideOnScreenSize": {
