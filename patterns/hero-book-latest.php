@@ -26,7 +26,7 @@ $number_reviews = get_option( 'hero_review_count', null );
 		"name": "Latest Book"
 	},
 	"align": "full",
-	"className": "is-style-section-1 book-hero book-hero-latest",
+	"className": "is-style-section-1 book-hero book-hero-latest is-style-mobile-center",
 	"style": {
 		"spacing": {
 			"padding": {
@@ -43,7 +43,7 @@ $number_reviews = get_option( 'hero_review_count', null );
 		"type": "default"
 	}
 } -->
-<div class="wp-block-group alignfull is-style-section-1 book-hero book-hero-latest" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
+<div class="wp-block-group alignfull is-style-section-1 book-hero book-hero-latest is-style-mobile-center" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
 
 	<!-- wp:query {
 	"queryId": 115,
@@ -221,8 +221,15 @@ $number_reviews = get_option( 'hero_review_count', null );
 								</div>
 								<!-- /wp:group -->
 
-								<!-- wp:group {"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
-								<div class="wp-block-group">
+								<!-- wp:group {
+									"layout":{
+										"type":"flex",
+										"orientation":"vertical",
+										"justifyContent":"stretch"
+									},
+									"className":"is-style-mobile-center"
+								} -->
+								<div class="wp-block-group is-style-mobile-center">
 									<!-- wp:pattern {"slug":"greg-grandin/element-spacer"} /-->
 
 									<?php display_book_buttons( $post_id ); ?>

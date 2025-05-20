@@ -40,6 +40,11 @@
 .is-style-mobile-center {
 	margin-right: auto;
 	margin-left: auto;
+
+	@media screen and ( max-width: calc( 782px - 1px ) ) {
+		text-align: center;
+		min-width: 100%;
+	}
 }
 
 .is-style-text-emphasis {

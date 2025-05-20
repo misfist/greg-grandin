@@ -21,6 +21,25 @@ $books = get_post_type_archive_link( 'book' );
 
 	<!-- wp:group {"align":"wide","layout":{"type":"default"},"className":"body-content"} -->
 	<div class="wp-block-group alignwide body-content">
+		<!-- wp:heading {
+			"metadata": {
+				"name": "Heading"
+			},
+			"align": "wide",
+			"style": {
+				"typography": {
+					"textTransform": "uppercase",
+					"fontStyle": "normal",
+					"fontWeight": "700",
+					"letterSpacing": "1.4px"
+				}
+			},
+			"className": "is-style-mobile-center",
+			"fontSize": "small"
+		} -->
+		<h2 class="wp-block-heading alignwide has-small-font-size is-style-mobile-center" style="font-style:normal;font-weight:700;letter-spacing:1.4px;text-transform:uppercase"><?php echo esc_html_x( 'Other Books', 'Homepage book list pattern headline text', 'greg-grandin' ); ?></h2>
+		<!-- /wp:heading -->
+
 		<!-- wp:pattern {"slug":"greg-grandin/query-loop-books-front-page"} /-->
 
 		<!-- wp:paragraph {
