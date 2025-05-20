@@ -13,23 +13,23 @@
 $per_page = ( get_option( 'posts_per_page' ) ) ? get_option( 'posts_per_page' ) : 10;
 ?>
 <!-- wp:query {
-    "queryId": 1,
-    "query": {
-        "perPage": <?php echo intval( $posts_per_page ); ?>,
-        "pages": 0,
-        "offset": 0,
-        "postType": "book",
-        "order": "desc",
-        "orderBy": "date",
-        "author": "",
-        "search": "",
-        "exclude": [],
-        "sticky": "",
-        "inherit": true,
-        "parents": [],
-        "format": []
-    },
-    "enhancedPagination": false,
+	"queryId": 1,
+	"query": {
+		"perPage": <?php echo intval( $posts_per_page ); ?>,
+		"pages": 0,
+		"offset": 0,
+		"postType": "book",
+		"order": "desc",
+		"orderBy": "date",
+		"author": "",
+		"search": "",
+		"exclude": [],
+		"sticky": "",
+		"inherit": true,
+		"parents": [],
+		"format": []
+	},
+	"enhancedPagination": false,
 	"className": "post-list book-list"
 } -->
 <div class="wp-block-query post-list book-list">
@@ -79,7 +79,7 @@ $per_page = ( get_option( 'posts_per_page' ) ) ? get_option( 'posts_per_page' ) 
 					"metadata": {
 						"name": "Quotes - Non-mobile"
 					},
-					"number": 2,
+					"number": "2",
 					"blockVisibility": {
 						"controlSets": [
 							{

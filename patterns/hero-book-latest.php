@@ -14,7 +14,8 @@
  */
 use function Greg_Grandin\display_book_buttons;
 use function Greg_Grandin\get_latest_book_id;
-$post_id = get_latest_book_id();
+$post_id        = get_latest_book_id();
+$number_reviews = get_option( 'hero_review_count', null );
 ?>
 
 <!-- wp:group {
@@ -229,6 +230,7 @@ $post_id = get_latest_book_id();
 									<!-- wp:pattern {"slug":"greg-grandin/element-spacer"} /-->
 								</div>
 								<!-- /wp:group -->
+								 
 							</div>
 							<!-- /wp:group -->
 						</div>
@@ -285,6 +287,30 @@ $post_id = get_latest_book_id();
 						<!-- /wp:column -->
 					</div>
 					<!-- /wp:columns -->
+
+					<!-- wp:site-functionality/quotes {
+						"metadata": {
+							"name": "Quotes - Non-mobile"
+						},
+						"number": "<?php echo esc_attr( $number_reviews ); ?>",
+						"blockVisibility": {
+							"controlSets": [
+								{
+									"id": 1,
+									"enable": true,
+									"controls": {
+										"screenSize": {
+											"hideOnScreenSize": {
+												"extraSmall": true,
+												"small": true
+											}
+										}
+									}
+								}
+							]
+						}
+					} /-->
+
 				</div>
 				<!-- /wp:group -->
 

@@ -85,7 +85,7 @@ $per_page = ( get_option( 'posts_per_page' ) ) ? get_option( 'posts_per_page' ) 
 					"metadata": {
 						"name": "Quotes - Non-mobile"
 					},
-					"number": 2,
+					"number": "2",
 					"blockVisibility": {
 						"controlSets": [
 							{
