@@ -78,7 +78,7 @@ function render_blockquotes( $post_id = null, $number = 2 ) {
 	global $post;
 	$post_id = ( $post_id ) ? $post_id : $post->ID;
 
-	echo get_blockquotes( $post_id, $number );
+	echo wp_kses_post( get_blockquotes( $post_id, $number ) );
 }
 
 /**
@@ -88,8 +88,8 @@ function render_blockquotes( $post_id = null, $number = 2 ) {
  */
 function get_book_buttons( $post_id = null ): ?string {
 	global $post;
-	$post_id    = ( $post_id ) ? $post_id : get_the_ID();
-	$post = get_post( $post_id );
+	$post_id = ( $post_id ) ? $post_id : get_the_ID();
+	$post    = get_post( $post_id );
 
 	$block_name = 'site-functionality/buy-buttons';
 
@@ -98,7 +98,6 @@ function get_book_buttons( $post_id = null ): ?string {
 	}
 
 	$blocks = parse_blocks( $post->post_content );
-
 
 	$output = '';
 
@@ -120,7 +119,7 @@ function display_book_buttons( $post_id = null ): void {
 	global $post;
 	$post_id = ( $post_id ) ? $post_id : $post->ID;
 
-	echo get_book_buttons( $post_id, $number );
+	echo wp_kses_post( get_book_buttons( $post_id, $number ) );
 }
 
 /**
@@ -128,17 +127,31 @@ function display_book_buttons( $post_id = null ): void {
  *
  * @return integer|null
  */
-function get_latest_book_id() : ?int {
-	$args = array(
+function get_latest_book_id(): ?int {
+	$args  = array(
 		'post_type'      => 'book',
 		'posts_per_page' => 1,
 		'orderby'        => 'menu_order',
 		'order'          => 'asc',
-		'fields' => 'ids',
+		'fields'         => 'ids',
 	);
 	$posts = get_posts( $args );
-	if( ! empty( $posts ) && ! is_wp_error( $posts ) ) {
+	if ( ! empty( $posts ) && ! is_wp_error( $posts ) ) {
 		return $posts[0];
 	}
 	return null;
+}
+
+/**
+ * Get setting
+ *
+ * @return mixed
+ */
+function get_review_count() {
+	if ( class_exists( 'Site_Functionality\App\Admin\Site_Settings' ) ) {
+		$count = Site_Functionality\App\Admin\Site_Settings::get_setting();
+	} else {
+		$key   = 'hero_review_count';
+		$count = get_option( $key );
+	}
 }

@@ -229,3 +229,21 @@ main:has( .book-hero ) {
 		}
 	}
 }
+
+.wp-block-quote {
+	border-left: none;
+	font-style: normal;
+	text-align: center;
+
+	p {}
+
+	cite {
+		text-align: center;
+		font-style: italic;
+		
+	
+		em {
+			font-style: normal;
+		}
+	}
+}
