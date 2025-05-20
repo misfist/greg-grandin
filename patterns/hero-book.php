@@ -112,9 +112,9 @@ use function Greg_Grandin\display_book_buttons;
 									}
 								}
 							},
-							"className": "book-blurb has-text-align-left is-style-text-emphasis"
+							"className": "book-blurb is-style-text-emphasis"
 						} -->
-						<p class="book-blurb has-text-align-left is-style-text-emphasis"></p>
+						<p class="book-blurb is-style-text-emphasis"></p>
 						<!-- /wp:paragraph -->
 
 						<!-- wp:post-featured-image {
@@ -164,11 +164,18 @@ use function Greg_Grandin\display_book_buttons;
 					</div>
 					<!-- /wp:group -->
 
-					<!-- wp:group {"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
-					<div class="wp-block-group">
+					<!-- wp:group {
+						"layout":{
+							"type":"flex",
+							"orientation":"vertical",
+							"justifyContent":"stretch"
+						},
+						"className":"is-style-mobile-center"
+					} -->
+					<div class="wp-block-group is-style-mobile-center">
 						<!-- wp:pattern {"slug":"greg-grandin/element-spacer"} /-->
 
-						<?php display_book_buttons(); ?>
+						<?php display_book_buttons( $post_id ); ?>
 
 						<!-- wp:pattern {"slug":"greg-grandin/element-spacer"} /-->
 					</div>

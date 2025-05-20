@@ -151,9 +151,9 @@ $number_reviews = get_option( 'hero_review_count', null );
 												}
 											}
 										},
-										"className": "book-blurb has-text-align-left is-style-text-emphasis"
+										"className": "book-blurb is-style-text-emphasis"
 									} -->
-									<p class="book-blurb has-text-align-left is-style-text-emphasis"></p>
+									<p class="book-blurb is-style-text-emphasis"></p>
 									<!-- /wp:paragraph -->
 
 									<!-- wp:post-featured-image {
