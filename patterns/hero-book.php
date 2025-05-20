@@ -22,7 +22,7 @@ use function Greg_Grandin\display_book_buttons;
 		"name": "About the Book"
 	},
 	"align": "full",
-	"className": "is-style-section-1 book-hero",
+	"className": "is-style-section-1 book-hero is-style-mobile-center",
 	"style": {
 		"spacing": {
 			"padding": {
@@ -39,7 +39,7 @@ use function Greg_Grandin\display_book_buttons;
 		"type": "default"
 	}
 } -->
-<div class="wp-block-group alignfull is-style-section-1 book-hero" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
+<div class="wp-block-group alignfull is-style-section-1 book-hero is-style-mobile-center" style="margin-top:0;margin-bottom:0;padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
 	<!-- wp:group {"align":"full","className":"is-style-section-1","layout":{"type":"constrained"}} -->
 	<div class="wp-block-group alignfull is-style-section-1">
 		<!-- wp:columns {"verticalAlignment":"top","align":"wide"} -->
@@ -112,9 +112,9 @@ use function Greg_Grandin\display_book_buttons;
 									}
 								}
 							},
-							"className": "book-blurb has-text-align-left is-style-text-emphasis"
+							"className": "book-blurb is-style-text-emphasis"
 						} -->
-						<p class="book-blurb has-text-align-left is-style-text-emphasis"></p>
+						<p class="book-blurb is-style-text-emphasis"></p>
 						<!-- /wp:paragraph -->
 
 						<!-- wp:post-featured-image {
@@ -164,11 +164,18 @@ use function Greg_Grandin\display_book_buttons;
 					</div>
 					<!-- /wp:group -->
 
-					<!-- wp:group {"layout":{"type":"flex","orientation":"vertical","justifyContent":"stretch"}} -->
-					<div class="wp-block-group">
+					<!-- wp:group {
+						"layout":{
+							"type":"flex",
+							"orientation":"vertical",
+							"justifyContent":"stretch"
+						},
+						"className":"is-style-mobile-center"
+					} -->
+					<div class="wp-block-group is-style-mobile-center">
 						<!-- wp:pattern {"slug":"greg-grandin/element-spacer"} /-->
 
-						<?php display_book_buttons(); ?>
+						<?php display_book_buttons( $post_id ); ?>
 
 						<!-- wp:pattern {"slug":"greg-grandin/element-spacer"} /-->
 					</div>

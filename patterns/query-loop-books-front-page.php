@@ -36,9 +36,9 @@ $per_page = ( get_option( 'posts_per_page' ) ) ? get_option( 'posts_per_page' ) 
 		"patternName": "greg-grandin/query-loop-books-front-page",
 		"name": "Home Page Books"
 	},
-	"className": "post-list book-list"
+	"className": "post-list book-list is-style-mobile-center"
 } -->
-<div class="wp-block-query post-list book-list">
+<div class="wp-block-query post-list book-list is-style-mobile-center">
 
 	<!-- wp:post-template -->
 

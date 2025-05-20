@@ -30,9 +30,9 @@ $per_page = ( get_option( 'posts_per_page' ) ) ? get_option( 'posts_per_page' ) 
 		"format": []
 	},
 	"enhancedPagination": false,
-	"className": "post-list book-list"
+	"className": "post-list book-list is-style-mobile-center"
 } -->
-<div class="wp-block-query post-list book-list">
+<div class="wp-block-query post-list book-list is-style-mobile-center">
 
 	<!-- wp:post-template -->
 
